@@ -1,0 +1,9 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = true
+[remote "origin"]
+	url = https://github.com/zzhannah/cse135proj.git
+[remote "prod"]
+	url = ssh://root@143.244.179.141/var/repo/cse135proj.git
+	fetch = +refs/heads/*:refs/remotes/prod/*
