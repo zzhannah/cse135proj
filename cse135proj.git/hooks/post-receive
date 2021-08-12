@@ -1,2 +1,0 @@
-#!/bin/sh
-git --work-tree=/var/www/cse135proj.site --git-dir=/var/www/cse135proj.site/cse135proj.git checkout -f
