@@ -5,10 +5,10 @@ header('Cache-Control: no-cache');
 
 <html>
     <head>
-        <title>POST Request Echo</title>
+        <title>General Request Echo</title>
     </head>
     <body>
-        <h1 align="center">POST Request Echo</h1>
+        <h1 align="center">General Request Echo</h1>
         <hr/>
         <ul>
             <?php
