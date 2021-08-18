@@ -14,5 +14,6 @@ header('Cache-Control: no-cache');
         echo "<p>Current Time: " . date("l m/d H:i:sa Y") . "</p>";
         echo "<p>Your IP Adress: " . getenv("REMOTE_ADDR") . "</p>";
     ?>
+    <a href="/" style="display:inline-block;margin-top:20px;">Home</a>
 </body>
 </html>

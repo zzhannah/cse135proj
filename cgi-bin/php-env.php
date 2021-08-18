@@ -21,5 +21,6 @@ header('Cache-Control: no-cache');
                 echo $key_name . " = " . $key_value . "<br />";
             }
         ?>
+        <a href="/" style="display:inline-block;margin-top:20px;">Home</a>
     </body>    
 </html>

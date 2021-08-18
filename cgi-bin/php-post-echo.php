@@ -18,5 +18,6 @@ header('Cache-Control: no-cache');
             }
             ?>
         </ul>
+        <a href="/" style="display:inline-block;margin-top:20px;">Home</a>
     </body>
 </html>

@@ -9,3 +9,4 @@ $arr = array('title' => 'Hello, Php!', 'message' => 'This page was generated wit
 
 echo json_encode($arr);
 ?>
+<a href="/" style="display:inline-block;margin-top:20px;">Home</a>
