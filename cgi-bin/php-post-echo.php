@@ -8,7 +8,7 @@ header('Cache-Control: no-cache');
         <title>POST Request Echo</title>
     </head>
     <body>
-        <h1 align=center>POST Request Echo</h1>
+        <h1 align="center">POST Request Echo</h1>
         <hr/>
         <ul>
             <?php
