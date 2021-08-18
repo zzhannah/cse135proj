@@ -16,10 +16,10 @@ header('Cache-Control: no-cache');
             foreach ($env_array as $key=>$value){
                 echo "$key => $value <br />";
             }
-            echo "Server Variables:"
-            foreach ($_SERVER as $parm => $value)  {
-                echo $key_name . " = " . $key_value . "<br>";
-            }
-        ?>
+        //     echo "Server Variables:"
+        //     foreach ($_SERVER as $parm => $value)  {
+        //         echo $key_name . " = " . $key_value . "<br>";
+        //     }
+         ?>
     </body>    
 </html>
