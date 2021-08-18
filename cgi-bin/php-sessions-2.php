@@ -13,7 +13,7 @@ session_start();
             if($_SESSION["name"]){
                 echo "<p><b>Name: </b>". $_SESSION["name"] . "</p>";
             }else {
-                echo "<p><b>Name: </b>You do not have a name set"
+                echo "<p><b>Name: </b>You do not have a name set";
             }
         ?>
         <a href="/php-cgiform.html">CGI Form</a><br />
