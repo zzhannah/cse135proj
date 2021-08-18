@@ -12,8 +12,8 @@ header('Cache-Control: no-cache');
         <p><b>Query String:</b> </p>
         <ul>
             <?php
-            foreach($_SERVER('QUERY_STRING') as $key_name => $key_value){
-                echo "<li>$key_name = $key_value</li>";
+            foreach($_GET as $key_name => $key_value){
+                echo "<p>$key_name = $key_value</p>";
             }
             ?>
         </ul>
