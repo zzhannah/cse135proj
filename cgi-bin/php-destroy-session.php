@@ -9,7 +9,7 @@ session_start();
     <body>
         <h1 align="center">Session Destroyed</h1>
         <?php
-            unset($_SESSION);
+            unset($_SESSION["name"]);
         ?>
         <hr/>
         <a href="/php-cgiform.html">CGI Form</a><br />
