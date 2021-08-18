@@ -13,7 +13,7 @@ header('Cache-Control: no-cache');
         <ul>
             <?php
             foreach($_POST as $key_name => $key_value){
-                echo "<p>$key_name = $key_value</p>";
+                echo "<li>$key_name = $key_value</li>";
             }
             ?>
         </ul>
