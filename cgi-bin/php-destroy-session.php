@@ -4,6 +4,8 @@ session_start();
 
 <html>
     <head>
+        <script src="https://cdn.lr-in.com/LogRocket.min.js" crossorigin="anonymous"></script>
+        <script>window.LogRocket && window.LogRocket.init('vif6az/cse135proj');</script>
         <title>PHP Sessions</title>
     </head>
     <body>
