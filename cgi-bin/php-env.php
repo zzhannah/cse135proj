@@ -14,14 +14,12 @@ header('Cache-Control: no-cache');
             echo "<h4>Environment Variables:</h4>";
             $env_array = getenv();
             foreach ($env_array as $key=>$value){
-                echo "$key => $value <br />";
+                echo $key . " = " . $value . "<br />";
             }
             echo "<h4>Server Variables:</h4>";
             foreach($_SERVER as $key_name => $key_value) {
-
-                echo $key_name . "=" . $key_value . "<br />";
-                
-                }
+                echo $key_name . " = " . $key_value . "<br />";
+            }
         ?>
     </body>    
 </html>
