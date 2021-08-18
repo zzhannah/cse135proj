@@ -11,9 +11,8 @@ header('Cache-Control: no-cache');
         <h1 align="center">Environment Variables</h1>
         <hr>
         <?php
-            
             $env_array = getenv();
-            foreach ($env_array as $key=>$value){
+            foreach $env_array{
                 echo "$key => $value <br />";
             }
         ?>
