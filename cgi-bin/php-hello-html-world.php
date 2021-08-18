@@ -11,8 +11,8 @@ header('Cache-Control: no-cache');
     <p>This page was generated with the Php programming langauge</p>
 
     <?php
-        echo "<p>Current Time: " . date("l m/d H:i:sa Y") . "<p>";
-        echo "<p>Your IP Adress: " . getenv("REMOTE_ADDR") . "<p>";
+        echo "<p>Current Time: " . date("l m/d H:i:sa Y") . "</p>";
+        echo "<p>Your IP Adress: " . getenv("REMOTE_ADDR") . "</p>";
     ?>
 </body>
 </html>
