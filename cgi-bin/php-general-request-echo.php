@@ -12,6 +12,7 @@ header('Cache-Control: no-cache');
         <hr/>
         <?php
             echo "<p><b>Request Method: " . $_SERVER['REQUEST_METHOD'] . "</b></p>"
+            echo "<p><b>Protocol: " . $_SERVER['SERVER_PROTOCOL'] . "</b></p>"
         ?>
         <p><b>Request Method: </b></p>
         <p><b>Query String:</b> </p>
