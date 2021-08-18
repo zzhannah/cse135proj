@@ -11,15 +11,11 @@ header('Cache-Control: no-cache');
         <h1 align="center">Environment Variables</h1>
         <hr>
         <?php
-            echo "Environment Variables:"
+            //echo "Environment Varib"
             $env_array = getenv();
             foreach ($env_array as $key=>$value){
                 echo "$key => $value <br />";
             }
-        //     echo "Server Variables:"
-        //     foreach ($_SERVER as $parm => $value)  {
-        //         echo $key_name . " = " . $key_value . "<br>";
-        //     }
-         ?>
+        ?>
     </body>    
 </html>
