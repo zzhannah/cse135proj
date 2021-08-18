@@ -12,7 +12,7 @@ header('Cache-Control: no-cache');
         <hr>
         <?php
             $env_array = getenv();
-            foreach $env_array{
+            foreach ($env_array as $key=>$value){
                 echo "$key => $value <br />";
             }
         ?>
