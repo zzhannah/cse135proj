@@ -18,7 +18,7 @@ header('Cache-Control: no-cache');
             }
             echo "Server Variables:"
             foreach ($_SERVER as $parm => $value)  {
-                echo "$parm = '$value'\n";
+                echo "$parm => $value\n";
             }
         ?>
     </body>    
