@@ -10,13 +10,15 @@ session_start();
         <h1 align=center>PHP Sessions Page 1</h1>
         <hr/>
         <?php
-            
-            $_SESSION["name"] = $_POST["name"];
-            if($_SESSION["name"]){
-                echo "<p><b>Name: </b>". $_SESSION["name"] . "</p>";
-            }else {
-                echo "<p><b>Name: </b>You do not have a name set</p>";
+            if($_POST["name"])  $_SESSION["name"] = $_POST["name"];
+            else{
+                if($_SESSION["name"]){
+                    echo "<p><b>Name: </b>". $_SESSION["name"] . "</p>";
+                }else {
+                    echo "<p><b>Name: </b>You do not have a name set</p>";
+                }
             }
+            
             
         ?>
         <a href="/php-cgiform.html">CGI Form</a><br />
