@@ -19,8 +19,8 @@ for arg in args:
     if len(t)>1: k, v=arg.split('='); POST[k]=v
 
 for a in POST:
-    print "<li>", a , " = " , POST[a], "</li>"
-print args
+    print "<li>", a , "=" , POST[a], "</li>"
+
 print "</ul"
 print "<p>Message Body: </p>"
 print "</body>"
