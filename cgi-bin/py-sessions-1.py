@@ -13,15 +13,15 @@ print "</head>"
 print "<body>"
 print "<h1 align='center'>Python Session Page 1</h1><hr>"
 
-POST={}
-args=sys.stdin.read().split('&')
+# POST={}
+# args=sys.stdin.read().split('&')
 
-for arg in args: 
-    t=arg.split('=')
-    if len(t)>1: k, v=arg.split('='); POST[k]=v
+# for arg in args: 
+#     t=arg.split('=')
+#     if len(t)>1: k, v=arg.split('='); POST[k]=v
 
 
-print "<p><b>Name: </b>", POST['name'], "</p>"
+# print "<p><b>Name: </b>", POST['name'], "</p>"
 
 print "<a href='/php-cgiform.html>CGI Form</a><br />"
 print "<a href='/cgi-bin/php-sessions-2.php'>Session Page 2</a><br />"
