@@ -2,6 +2,9 @@
 
 # Import modules for CGI handling 
 import cgi, cgitb, os, sys
+from flask import Flask, session, redirect, url_for, escape, request
+app = Flask(__name__)
+app.secret_key = 'hh’
 print "Content-type:text/html\r\n\r\n"
 print "<html>"
 print "<head>"
