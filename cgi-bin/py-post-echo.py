@@ -9,7 +9,7 @@ print "<head>"
 print "<title>POST Message Body</title>"
 print "</head>"
 print "<body>"
-print "<h1>POST Message Body</h1>"
+print "<h1 align='center'>POST Message Body</h1><hr>"
 print "<ul>"
 POST={}
 args=sys.stdin.read().split('&')
