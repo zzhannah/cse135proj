@@ -1,7 +1,8 @@
 #!/usr/bin/python
 
 # Import modules for CGI handling 
-import cgi, cgitb, os, sys
+import cgi, cgitb, os, sys, requests
+from bs4 import BeautifulSoup
 form = cgi.FieldStorage()
 print ("Content-type:text/html\r\n\r\n")
 print ("<html>")
@@ -11,18 +12,13 @@ print ("</head>")
 print ("<body>")
 print ("<h1 align='center'>Python Session Page 2</h1><hr>")
 
-# POST={}
-# args=sys.stdin.read().split('&')
+r = requests.get('https://cse135proj.site/cgi-bin/py-sessions-1.py')
+html_bytes = r.text
+soup = BeautifulSoup(html_bytes)
+hidden = soup.find_all('input', type="hidden")
+for tag in hidden_tags:
+   name = tag.name
 
-# for arg in args: 
-#     t=arg.split('=')
-#     if len(t)>1: k, v=arg.split('='); POST[k]=v
-name = form.getvalue('name')
-# if POST['name']:
-#     s.post(setCookieUrl, params={'name': POST['name']}, auth=auth)
-
-# r = requests.get(setCookieUrl, auth=auth)
-# print(r.content)
 if name:
     namme = name
 else:
