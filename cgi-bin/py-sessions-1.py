@@ -22,7 +22,7 @@ for arg in args:
 
 if POST['name']:
     s.post(setCookieUrl, params={'name': POST['name']})
-print s.get(getCookieUrl)
+print s.get(getCookieUrl).body['name']
 if POST['name']:
     namme = POST['name']
 else:
