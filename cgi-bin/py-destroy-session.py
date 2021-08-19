@@ -4,9 +4,7 @@
 import cgi, cgitb, os 
 
 
-print ("Cache-Control: no-cache\n")
-print ("Set-Cookie: destroyed\n")
-print ("Content-type:text/html\n")
+print ("Content-type:text/html\r\n\r\n")
 
 print ("<html>")
 print ("<head>")
