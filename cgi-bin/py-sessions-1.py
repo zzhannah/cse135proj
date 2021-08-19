@@ -1,10 +1,10 @@
 #!/usr/bin/python
 
 # Import modules for CGI handling 
-import cgi, cgitb, os, sys
-# s=requests.Session()
-# setCookieUrl = 'https://cse135proj.site/cookies/set'
-# getCookieUrl = 'https://cse135proj.site/cookies'
+import cgi, cgitb, os, sys, requests
+s=requests.Session()
+setCookieUrl = 'https://cse135proj.site/cookies/set'
+getCookieUrl = 'https://cse135proj.site/cookies'
 print "Content-type:text/html\r\n\r\n"
 print "<html>"
 print "<head>"
@@ -19,9 +19,13 @@ args=sys.stdin.read().split('&')
 for arg in args: 
     t=arg.split('=')
     if len(t)>1: k, v=arg.split('='); POST[k]=v
+    
+if POST['name']:
+    namme = POST['name']
+else:
+    namme = "You do not have a name set"
 
-
-print "<p><b>Name: </b>", POST['name'], "</p>"
+print "<p><b>Name: </b>", namme, "</p>"
 
 print "<a href='/php-cgiform.html>CGI Form</a><br />"
 print "<a href='/cgi-bin/php-sessions-2.php'>Session Page 2</a><br />"

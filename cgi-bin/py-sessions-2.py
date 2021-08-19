@@ -26,6 +26,6 @@ print "<p><b>Name: </b>", v, "</p>"
 
 print "<a href='/php-cgiform.html>CGI Form</a><br />"
 print "<a href='/cgi-bin/php-sessions-2.php'>Session Page 2</a><br />"
-print "<form style='margin-top:30px' action='/cgi-bin/php-destroy-session.php' method='get'><button type="submit">Destroy Session</button></form>"
+print "<form style='margin-top:30px' action='/cgi-bin/php-destroy-session.php' method='get'><button type='submit'>Destroy Session</button></form>"
 print "</body>"
 print "</html>"
