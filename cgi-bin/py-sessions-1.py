@@ -21,8 +21,7 @@ else:
 username = {'name': name}
 s.get(setCookieUrl, params=username)
 
-
-print "<p><b>Name: </b>", v, "</p>"
+print "<p><b>Name: </b>", name, "</p>"
 
 print "<a href='/php-cgiform.html>CGI Form</a><br />"
 print "<a href='/cgi-bin/php-sessions-2.php'>Session Page 2</a><br />"
