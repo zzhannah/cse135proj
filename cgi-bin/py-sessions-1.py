@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 # Import modules for CGI handling 
-import cgi, cgitb, os, sys, requests
+import cgi, cgitb, os, sys
 # s=requests.Session()
 # setCookieUrl = 'https://cse135proj.site/cookies/set'
 # getCookieUrl = 'https://cse135proj.site/cookies'
