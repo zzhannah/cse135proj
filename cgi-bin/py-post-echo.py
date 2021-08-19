@@ -6,10 +6,11 @@ import cgi, cgitb, os, sys
 print "Content-type:text/html\r\n\r\n"
 print "<html>"
 print "<head>"
-print "<title>POST Message Body</title>"
+print "<title>POST Request Echo</title>"
 print "</head>"
 print "<body>"
-print "<h1 align='center'>POST Message Body</h1><hr>"
+print "<h1 align='center'>POST Request Echo</h1><hr>"
+print "<p><b>Message Body: </b></p>"
 print "<ul>"
 POST={}
 args=sys.stdin.read().split('&')
@@ -22,6 +23,6 @@ for a in POST:
     print "<li>", a , "=" , POST[a], "</li>"
 
 print "</ul>"
-print "<p><b>Message Body: </b></p>"
+
 print "</body>"
 print "</html>"
