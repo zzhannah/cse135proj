@@ -20,8 +20,9 @@ for arg in args:
     t=arg.split('=')
     if len(t)>1: k, v=arg.split('='); POST[k]=v
 
+namme = POST['name']
 
-print "<p><b>Name: </b>", POST['name'], "</p>"
+print "<p><b>Name: </b>", namme, "</p>"
 
 print "<a href='/php-cgiform.html>CGI Form</a><br />"
 print "<a href='/cgi-bin/php-sessions-2.php'>Session Page 2</a><br />"
