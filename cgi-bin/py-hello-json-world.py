@@ -4,7 +4,7 @@ import time
 import os
 import cgi
 
-print "Content-type: application/json\n"
+print ("Content-type: application/json\n")
 data = {
 	"Ttitle":"Hello, Python!",
 	"Message":"This page was generated with the Python programming language",

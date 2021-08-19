@@ -3,19 +3,19 @@
 # Import modules for CGI handling 
 import cgi, cgitb, os, sys
 
-print "Content-type:text/html\r\n\r\n"
-print "<html>"
-print "<head>"
-print "<title>General Request Echo</title>"
-print "</head>"
+print ("Content-type:text/html\r\n\r\n")
+print ("<html>")
+print ("<head>")
+print ("<title>General Request Echo</title>")
+print ("</head>")
 
-print "<body>"
-print "<h1 align='center'>General Request Echo</h1><hr>" 
-print "<p><b>Protocol:</b> %s</p>" % cgi.escape(os.environ["SERVER_PROTOCOL"])
-print "<p><b>Method:</b> %s</p>" % cgi.escape(os.environ["REQUEST_METHOD"])
+print ("<body>")
+print ("<h1 align='center'>General Request Echo</h1><hr>" )
+print ("<p><b>Protocol:</b> %s</p>") % cgi.escape(os.environ["SERVER_PROTOCOL"])
+print ("<p><b>Method:</b> %s</p>") % cgi.escape(os.environ["REQUEST_METHOD"])
 
-print "<p><b>Query String:</b></p>"
-print "<ul>"
+print ("<p><b>Query String:</b></p>")
+print ("<ul>")
 GET={}
 args=os.getenv("QUERY_STRING").split('&')
 
@@ -24,12 +24,12 @@ for arg in args:
     if len(t)>1: k,v=arg.split('='); GET[k]=v
 
 for i in GET:
-    print "<li>", i , "=" , GET[i], "</li>"
+    (print "<li>", i , "=" , GET[i], "</li>")
 
-print "</ul>"
+print ("</ul>")
 
-print "<p><b>Message Body:</b></p>"
-print "<ul>"
+print ("<p><b>Message Body:</b></p>")
+print ("<ul>")
 POST={}
 args=sys.stdin.read().split('&')
 
@@ -38,8 +38,8 @@ for arg in args:
     if len(t)>1: c, a=arg.split('='); POST[c]=a
 
 for a in POST:
-    print "<li>", a , "=" , POST[a], "</li>"
-print "</ul>"
+    print ("<li>", a , "=" , POST[a], "</li>")
+print ("</ul>")
 
-print "</body>"
-print "</html>"
+print ("</body>")
+print ("</html>")
