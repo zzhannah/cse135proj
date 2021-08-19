@@ -5,6 +5,7 @@ import cgi, cgitb, os, sys
 from flask import Flask, session, redirect, url_for, escape, request
 app = Flask(__name__)
 app.secret_key = 'hh'
+Session(app)
 print "Content-type:text/html\r\n\r\n"
 print "<html>"
 print "<head>"
@@ -20,8 +21,8 @@ for arg in args:
     t=arg.split('=')
     if len(t)>1: k, v=arg.split('='); POST[k]=v
 
-# if POST['name']:
-#     session['name'] = POST['name']
+if POST['name']:
+    session['name'] = POST['name']
 
 if POST['name']:
     namme = POST['name']
