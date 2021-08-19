@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 # Import modules for CGI handling 
 import cgi, cgitb, os, urlparse
