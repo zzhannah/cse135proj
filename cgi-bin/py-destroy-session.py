@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 # Import modules for CGI handling 
-import cgi, cgitb, os, sys
+import os, sys
 print ("Content-type:text/html\r\n\r\n")
 print ("<html>")
 print ("<head>")
@@ -9,6 +9,7 @@ print ("<title>Session Destroy</title>")
 print ("</head>")
 print ("<body>")
 print ("<h1 align='center'>Session Destroyed</h1><hr>")
+
 POST={}
 args=sys.stdin.read().split('&')
 
