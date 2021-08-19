@@ -10,12 +10,12 @@ print ("</head>")
 print ("<body>")
 print ("<h1 align='center'>Session Destroyed</h1><hr>")
 
-POST={}
-args=sys.stdin.read().split('&')
+# POST={}
+# args=sys.stdin.read().split('&')
 
-for arg in args: 
-    t=arg.split('=')
-    if len(t)>1: k, v=arg.split('='); POST[k]=v
+# for arg in args: 
+#     t=arg.split('=')
+#     if len(t)>1: k, v=arg.split('='); POST[k]=v
 
 # if POST['name']:
 #    POST['name'] = None
