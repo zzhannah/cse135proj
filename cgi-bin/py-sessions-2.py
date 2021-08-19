@@ -2,7 +2,7 @@
 
 # Import modules for CGI handling 
 import cgi, cgitb, os, sys
-
+form = cgi.FieldStorage()
 print ("Content-type:text/html\r\n\r\n")
 print ("<html>")
 print ("<head>")
@@ -11,20 +11,20 @@ print ("</head>")
 print ("<body>")
 print ("<h1 align='center'>Python Session Page 2</h1><hr>")
 
-POST={}
-args=sys.stdin.read().split('&')
+# POST={}
+# args=sys.stdin.read().split('&')
 
-for arg in args: 
-    t=arg.split('=')
-    if len(t)>1: k, v=arg.split('='); POST[k]=v
-
+# for arg in args: 
+#     t=arg.split('=')
+#     if len(t)>1: k, v=arg.split('='); POST[k]=v
+name = form.getvalue('name')
 # if POST['name']:
 #     s.post(setCookieUrl, params={'name': POST['name']}, auth=auth)
 
 # r = requests.get(setCookieUrl, auth=auth)
 # print(r.content)
-if POST['name']:
-    namme = POST['name']
+if name:
+    namme = name
 else:
     namme = "You do not have a name set"
     
