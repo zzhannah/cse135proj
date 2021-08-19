@@ -22,7 +22,8 @@ args=os.getenv("QUERY_STRING").split('&')
 for arg in args: 
     t=arg.split('=')
     if len(t)>1: k,v=arg.split('='); GET[k]=v
-for a in POST:
+
+for a in GET:
     print "<li>", a , "=" , POST[a], "</li>"
 
 print "</ul>"
@@ -35,6 +36,7 @@ args=sys.stdin.read().split('&')
 for arg in args: 
     t=arg.split('=')
     if len(t)>1: k, v=arg.split('='); POST[k]=v
+
 for a in POST:
     print "<li>", a , "=" , POST[a], "</li>"
 print "</ul>"
