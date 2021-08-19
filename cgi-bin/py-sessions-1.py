@@ -2,6 +2,8 @@
 
 # Import modules for CGI handling 
 import cgi, cgitb, os, sys, requests
+from requests.auth import HTTPBasicAuth
+auth = HTTPBasicAuth('fake@example.com', 'not_a_real_password')
 s=requests.Session()
 setCookieUrl = 'https://cse135proj.site/cookies/set'
 getCookieUrl = 'https://cse135proj.site/cookies'
@@ -21,8 +23,8 @@ for arg in args:
     if len(t)>1: k, v=arg.split('='); POST[k]=v
 
 if POST['name']:
-    s.post(setCookieUrl, params={'name': POST['name']})
-r = requests.get(getCookieUrl)
+    s.post(setCookieUrl, params={'name': POST['name']}, auth=auth)
+r = requests.get(getCookieUrl, auth=auth)
 print(r.content)
 if POST['name']:
     namme = POST['name']
