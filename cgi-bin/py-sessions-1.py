@@ -1,10 +1,7 @@
 #!/usr/bin/python
 
 # Import modules for CGI handling 
-import cgi, cgitb, os, sys, requests
-s=requests.Session()
-setCookieUrl = 'https://cse135proj.site/cookies/set'
-getCookieUrl = 'https://cse135proj.site/cookies'
+import cgi, cgitb, os, sys
 print "Content-type:text/html\r\n\r\n"
 print "<html>"
 print "<head>"
@@ -21,7 +18,7 @@ for arg in args:
     if len(t)>1: k, v=arg.split('='); POST[k]=v
 
 if POST['name']:
-    s.get(setCookieUrl, params={'name': POST['name']})
+    session['name'] = POST['name']
 
 if POST['name']:
     namme = POST['name']
