@@ -23,8 +23,8 @@ for arg in args:
     t=arg.split('=')
     if len(t)>1: k,v=arg.split('='); GET[k]=v
 
-for a in GET:
-    print "<li>", a , "=" , GET[a], "</li>"
+for i in GET:
+    print "<li>", i , "=" , GET[i], "</li>"
 
 print "</ul>"
 
@@ -35,7 +35,7 @@ args=sys.stdin.read().split('&')
 
 for arg in args: 
     t=arg.split('=')
-    if len(t)>1: k, v=arg.split('='); POST[k]=v
+    if len(t)>1: c, a=arg.split('='); POST[c]=a
 
 for a in POST:
     print "<li>", a , "=" , POST[a], "</li>"
