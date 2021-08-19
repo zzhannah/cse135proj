@@ -19,11 +19,11 @@ args=sys.stdin.read().split('&')
 for arg in args: 
     t=arg.split('=')
     if len(t)>1: k, v=arg.split('='); POST[k]=v
-    
-if POST['name']:
+
+# if POST['name']:
     namme = POST['name']
-else:
-    namme = "You do not have a name set"
+# else:
+#     namme = "You do not have a name set"
 
 print "<p><b>Name: </b>", namme, "</p>"
 
