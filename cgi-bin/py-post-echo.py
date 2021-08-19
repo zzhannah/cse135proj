@@ -10,10 +10,9 @@ print "<title>POST Message Body</title>"
 print "</head>"
 print "<body>"
 print "<h1>POST Message Body</h1>"
-print request.POST.items()
-for key, value in request.POST.items():
-    print('Key: %s' % (key) ) 
-    print('Value %s' % (value) ) 
-print "<p>Message Body: %s</p>" % cgi.escape(os.environ["QUERY_STRING"])
+args = os.getenv("QUERY_STRING").split('&')
+print args
+
+print "<p>Message Body: %s</p>"
 print "</body>"
 print "</html>"
