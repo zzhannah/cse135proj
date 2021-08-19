@@ -24,9 +24,10 @@ session_start();
         ?>
         <a href="/php-cgiform.html">CGI Form</a><br />
         <a href="/cgi-bin/php-sessions-2.php">Session Page 2</a><br />
-        <form style="margin-top:30px" action="/cgi-bin/php-destroy-session.php" method="get">
+        <a href="/cgi-bin/php-destroy-session.php">Destroy Session</a>
+        <!-- <form style="margin-top:30px" action="/cgi-bin/php-destroy-session.php" method="get">
             <button type="submit">Destroy Session</button>
-        </form>
+        </form> -->
     </body>
 </html>
 
