@@ -21,7 +21,7 @@ for arg in args:
 for a in POST:
     print "<li>", a , "=" , POST[a], "</li>"
 
-print "</ul>"
+print "</ul>`"
 print "<p>Message Body: </p>"
 print "</body>"
 print "</html>"
