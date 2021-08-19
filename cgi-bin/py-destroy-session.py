@@ -16,7 +16,7 @@ for arg in args:
     t=arg.split('=')
     if len(t)>1: k, v=arg.split('='); POST[k]=v
 
-# POST['name'] = None
+if POST['name']: POST['name'] = None
 
 print ("<a href='/py-cgiform.html'>CGI Form</a><br>")
 
