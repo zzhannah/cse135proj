@@ -13,6 +13,6 @@ print "<h1>POST Message Body</h1>"
 args = os.getenv("QUERY_STRING").split('&')
 print args
 
-print "<p>Message Body: %s</p>"
+print "<p>Message Body: </p>"
 print "</body>"
 print "</html>"
