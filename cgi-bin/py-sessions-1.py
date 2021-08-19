@@ -24,7 +24,7 @@ for arg in args:
 
 if POST['name']:
     s.post(setCookieUrl, params={'name': POST['name']}, auth=auth)
-r = requests.get(getCookieUrl, auth=auth)
+r = requests.get(setCookieUrl, auth=auth)
 print(r.content)
 if POST['name']:
     namme = POST['name']
