@@ -17,12 +17,12 @@ args=sys.stdin.read()
 # if args:
 #     name = "You do not have a name set"
 # else:
-k, name=args.split('='); POST[k]=name
+k, v=args.split('='); POST[k]=v
 
-username = {'name': name}
+# username = {'name': name}
 # s.get(setCookieUrl, params=username)
 
-print "<p><b>Name: </b>", name, "</p>"
+print "<p><b>Name: </b>", v, "</p>"
 
 print "<a href='/php-cgiform.html>CGI Form</a><br />"
 print "<a href='/cgi-bin/php-sessions-2.php'>Session Page 2</a><br />"
