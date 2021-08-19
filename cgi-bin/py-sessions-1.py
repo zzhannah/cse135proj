@@ -20,13 +20,19 @@ for arg in args:
     t=arg.split('=')
     if len(t)>1: k, v=arg.split('='); POST[k]=v
 
-namme = POST['name']
+# if POST['name']:
+
+
+if POST['name']:
+    namme = POST['name']
+else:
+    namme = "You do not have a name set"
 
 print "<p><b>Name: </b>", namme, "</p>"
 
-print "<a href='/php-cgiform.html>CGI Form</a><br />"
-print "<a href='/cgi-bin/php-sessions-2.php'>Session Page 2</a><br />"
-print "<form style='margin-top:30px' action='/cgi-bin/php-destroy-session.php' method='get'>"
+print "<a href='/py-cgiform.html>CGI Form</a><br />"
+print "<a href='/cgi-bin/py-sessions-2.py'>Session Page 2</a><br />"
+print "<form style='margin-top:30px' action='/cgi-bin/py-destroy-session.py' method='get'>"
 print "<button type='submit'>Destroy Session</button>"
 print "</form>"
 print "</body>"
