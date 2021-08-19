@@ -16,7 +16,7 @@ print "<title>GET query string</title>"
 print "</head>"
 print "<body>"
 print "<h1 align='center'>GET Request Echo</h1>"
-print "<br>"
+print "<hr>"
 print "<h3>query string</h2>"
 print "<ul>"
 x = os.environ.get('REQUEST_URI')

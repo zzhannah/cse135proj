@@ -10,6 +10,7 @@ print "<title>POST Message Body</title>"
 print "</head>"
 print "<body>"
 print "<h1>POST Message Body</h1>"
+print request.POST.items()
 for key, value in request.POST.items():
     print('Key: %s' % (key) ) 
     print('Value %s' % (value) ) 
