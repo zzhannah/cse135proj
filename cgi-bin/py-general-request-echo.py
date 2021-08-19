@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 # Import modules for CGI handling 
-import cgi, cgitb, os 
+import cgi, cgitb, os, sys
 
 print "Content-type:text/html\r\n\r\n"
 print "<html>"
@@ -14,7 +14,7 @@ print "<h1 align='center'>General Request Echo</h1><hr>"
 print "<p><b>Protocol:</b> %s</p>" % cgi.escape(os.environ["SERVER_PROTOCOL"])
 print "<p><b>Method:</b> %s</p>" % cgi.escape(os.environ["REQUEST_METHOD"])
 
-print "<p><b>Query String:</b> </p>"
+print "<p><b>Query String:</b></p>"
 print "<ul>"
 GET={}
 args=os.getenv("QUERY_STRING").split('&')
@@ -26,7 +26,8 @@ for a in POST:
     print "<li>", a , "=" , POST[a], "</li>"
 
 print "</ul>"
-print "<p><b>Message Body:</b> </p>"
+
+print "<p><b>Message Body:</b></p>"
 print "<ul>"
 POST={}
 args=sys.stdin.read().split('&')
@@ -37,5 +38,6 @@ for arg in args:
 for a in POST:
     print "<li>", a , "=" , POST[a], "</li>"
 print "</ul>"
+
 print "</body>"
 print "</html>"
