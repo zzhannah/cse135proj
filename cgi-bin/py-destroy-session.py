@@ -39,6 +39,16 @@ for arg in args:
 # print ("<input type='hidden' name='name' value='"+ POST['name'] + "'>")
 # print ("<button type='submit'>Destroy Session</button></form>")
 
+print ("<form action='/cgi-bin/py-sessions-1.py' method='post'>")
+print ("<input type='hidden' name='name' value='"+ POST['name'] + "'>")
+print ("<button type='submit'>Session 1</button></form>")
+
+print ("<form action='/cgi-bin/py-sessions-2.py' method='post'>")
+print ("<input type='hidden' name='name' value='"+ POST['name'] + "'>")
+print ("<button type='submit'>Session 2</button></form>")
+
+print ("<a href='/py-cgiform.html'>Python CGI Form</a>")
+
 print ("</body>")
 print ("</html>")
 
