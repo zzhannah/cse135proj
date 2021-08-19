@@ -2,12 +2,6 @@
 
 # Import modules for CGI handling 
 import cgi, cgitb, os, urlparse
-# Create instance of FieldStorage 
-form = cgi.FieldStorage() 
-
-# Get data from fields
-raw = form.getvalue('first_name')
-formatted  = form.getvalue('last_name')
 
 print ("Content-type:text/html\r\n\r\n")
 print ("<html>")
