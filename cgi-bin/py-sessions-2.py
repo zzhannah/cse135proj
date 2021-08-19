@@ -13,7 +13,7 @@ print "<title>Python Session Page 2</title>"
 print "</head>"
 print "<body>"
 print "<h1 align='center'>Python Session Page 2</h1><hr>"
-args = s.get(getCookieUrl)
+args = s.get(setCookieUrl)
 print args.text
 
 
