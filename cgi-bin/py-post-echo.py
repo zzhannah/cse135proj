@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 # Import modules for CGI handling 
-import cgi, cgitb, os, requests, sys
+import cgi, cgitb, os, sys
 
 print "Content-type:text/html\r\n\r\n"
 print "<html>"
