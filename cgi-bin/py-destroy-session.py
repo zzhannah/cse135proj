@@ -21,10 +21,7 @@ for arg in args:
 
 # r = requests.get(setCookieUrl, auth=auth)
 # print(r.content)
-if POST['name']:
-    print ("<p><b>Name: </b>"+ POST['name'] + "</p>")
-else:
-    print ("<p><b>Name: </b>you do not have a name set</p>")
+
 
 
 print ("<a href='/py-cgiform.html'>CGI Form</a><br>")
