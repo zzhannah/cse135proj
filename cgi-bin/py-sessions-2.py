@@ -1,8 +1,7 @@
 #!/usr/bin/python
 
 # Import modules for CGI handling 
-import cgi, cgitb, os, sys, requests
-from bs4 import BeautifulSoup
+import cgi, cgitb, os, sys, urlparse
 form = cgi.FieldStorage()
 print ("Content-type:text/html\r\n\r\n")
 print ("<html>")
@@ -11,16 +10,15 @@ print ("<title>Python Session Page 2</title>")
 print ("</head>")
 print ("<body>")
 print ("<h1 align='center'>Python Session Page 2</h1><hr>")
+GET={}
+args=os.getenv("QUERY_STRING").split('&')
 
-r = requests.get('https://cse135proj.site/cgi-bin/py-sessions-1.py')
-html_bytes = r.text
-soup = BeautifulSoup(html_bytes)
-hidden = soup.find_all('input', type="hidden")
-for tag in hidden_tags:
-   name = tag.name
+for arg in args: 
+    t=arg.split('=')
+    if len(t)>1: k,v=arg.split('='); GET[k]=v
 
-if name:
-    namme = name
+if GET['name']:
+    namme = GET['name']
 else:
     namme = "You do not have a name set"
     
