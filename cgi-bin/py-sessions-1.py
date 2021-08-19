@@ -3,8 +3,8 @@
 # Import modules for CGI handling 
 import cgi, cgitb, os, sys
 # s=requests.Session()
-setCookieUrl = 'https://cse135proj.site/cookies/set'
-getCookieUrl = 'https://cse135proj.site/cookies'
+# setCookieUrl = 'https://cse135proj.site/cookies/set'
+# getCookieUrl = 'https://cse135proj.site/cookies'
 print "Content-type:text/html\r\n\r\n"
 print "<html>"
 print "<head>"
@@ -12,8 +12,8 @@ print "<title>Python Session Page 1</title>"
 print "</head>"
 print "<body>"
 print "<h1 align='center'>Python Session Page 1</h1><hr>"
-POST{}
-args=sys.stdin.read()
+# POST{}
+# args=sys.stdin.read()
 # if args:
 #     name = "You do not have a name set"
 # else:
