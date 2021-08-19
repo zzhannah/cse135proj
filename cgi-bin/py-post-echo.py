@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 # Import modules for CGI handling 
-import cgi, cgitb, os
+import cgi, cgitb, os, request
 
 print "Content-type:text/html\r\n\r\n"
 print "<html>"
@@ -10,7 +10,7 @@ print "<title>POST Message Body</title>"
 print "</head>"
 print "<body>"
 print "<h1>POST Message Body</h1>"
-args = os.environ("QUERY_STRING").split('&')
+args = requests.body
 print args
 
 print "<p>Message Body: </p>"
