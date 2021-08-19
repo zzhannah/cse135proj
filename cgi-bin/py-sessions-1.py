@@ -28,9 +28,9 @@ if POST['name']:
 else:
     print ("<p><b>Name: </b>You do not have a name set</p>")
 
-print ("<form action=/cgi-bin/py-sessions-2.py' method='get' id='form'>")
-print ("<input type='hidden' name='name' value='"+ namme + "'/>")
-print ("</form>")
+# print ("<form action=/cgi-bin/py-sessions-2.py' method='get' id='form'>")
+# print ("<input type='hidden' name='name' value='"+ namme + "'/>")
+# print ("</form>")
 
 
 print ("<a href='/py-cgiform.html'>CGI Form</a><br>")
