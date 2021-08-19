@@ -11,9 +11,8 @@ print "</head>"
 print "<body>"
 print "<h1>POST Message Body</h1>"
 POST={}
-args=sys.stdin.read().split('&')
-for arg in args: 
-    print "<p>", arg, "</p>"
+args = sys.stdin.read().split('&')
+print args
 print "<p>Message Body: </p>"
 print "</body>"
 print "</html>"
