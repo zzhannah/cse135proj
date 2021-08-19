@@ -24,7 +24,7 @@ for arg in args:
     if len(t)>1: k,v=arg.split('='); GET[k]=v
 
 for i in GET:
-    (print "<li>", i , "=" , GET[i], "</li>")
+    print ("<li>" + i + "=" + GET[i] + "</li>")
 
 print ("</ul>")
 
