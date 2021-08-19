@@ -11,7 +11,7 @@ print ("</head>")
 print ("<body>")
 print ("<h1 align='center'>POST Request Echo</h1><hr>")
 print ("<p><b>Message Body: </b></p>")
-print ("<ul>"))
+print ("<ul>")
 POST={}
 args=sys.stdin.read().split('&')
 
