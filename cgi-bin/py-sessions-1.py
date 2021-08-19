@@ -13,16 +13,15 @@ print "</head>"
 print "<body>"
 print "<h1 align='center'>Python Session Page 1</h1><hr>"
 
-args=sys.stdin.read()
-# if args:
-#     name = "You do not have a name set"
-# else:
-    k, v=args.split('=')
+POST={}
+args=sys.stdin.read().split('&')
 
-# username = {'name': name}
-# s.get(setCookieUrl, params=username)
+for arg in args: 
+    t=arg.split('=')
+    if len(t)>1: k, v=arg.split('='); POST[k]=v
 
-print "<p><b>Name: </b>", v, "</p>"
+
+print "<p><b>Name: </b>", POST['name'], "</p>"
 
 print "<a href='/php-cgiform.html>CGI Form</a><br />"
 print "<a href='/cgi-bin/php-sessions-2.php'>Session Page 2</a><br />"
