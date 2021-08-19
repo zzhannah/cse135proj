@@ -35,7 +35,7 @@ print ("<p><b>Name: </b>"+ namme + "</p>")
 
 print ("<a href='/py-cgiform.html'>CGI Form</a><br>")
 print ("<a href='/cgi-bin/py-sessions-2.py'>Session Page 2</a><br>")
-print ("<form style='margin-top:30px' action='/cgi-bin/php-sessions-2.php' method='get'>")
+print ("<form style='margin-top:30px' action='/cgi-bin/py-sessions-2.py' method='get'>")
 print ("<input type='hidden' name='name' value='"+ namme + "'>")
 print ("<button type='submit'>Session 2</button></form>")
 print ("<a href='/cgi-bin/py-destroy-session.py'>Destroy Session</a>")
