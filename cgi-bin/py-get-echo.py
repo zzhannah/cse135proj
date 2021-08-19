@@ -23,7 +23,7 @@ x = os.environ.get('REQUEST_URI')
 par = urlparse.parse_qs(urlparse.urlparse(x).query)
 query = par.items()
 for y, z in query:
-	print "<li>", y," = ", z, "</li>"
+	print "<li>"+ y + " = " + z + "</li>"
 print ("</ul>")
 print ("</body>")
 print ("</html>")

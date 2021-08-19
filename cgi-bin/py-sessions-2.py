@@ -23,10 +23,10 @@ else:
     namme = "You do not have a name set"
 
 print ("<form action=/cgi-bin/py-sessions-1.py' method='Post' id='form'>")
-print ("<input type='hidden' name='name' value='", namme, "'/>")
+print ("<input type='hidden' name='name' value='" + namme + "'/>")
 print ("</form>")
 
-print ("<p><b>Name: </b>", namme, "</p>")
+print ("<p><b>Name: </b>" + namme + "</p>")
 print ("<a href='/py-cgiform.html'>CGI Form</a><br>")
 print ("<a href='/cgi-bin/py-sessions-1.py'>Session Page 1</a><br>")
 print ("<a href='/cgi-bin/py-destroy-session.py'>Destroy Session</a>")

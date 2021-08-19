@@ -38,7 +38,7 @@ for arg in args:
     if len(t)>1: c, a=arg.split('='); POST[c]=a
 
 for a in POST:
-    print ("<li>", a , "=" , POST[a], "</li>")
+    print ("<li>"+ a + "=" + POST[a] + "</li>")
 print ("</ul>")
 
 print ("</body>")

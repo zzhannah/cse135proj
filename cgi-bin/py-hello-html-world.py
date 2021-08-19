@@ -14,6 +14,6 @@ print ("<HTML><HEAD><TITLE>Hello, Python!</TITLE></HEAD><BODY><H1>Here is Hannah
 x = time.strftime("%m/%d/%Y, %H:%M:%S")
 
 y = cgi.escape(os.environ["REMOTE_ADDR"])
-print ("<P>Current Time: ", x, "</p>")
-print ("<p>Your IP Address: ", y, "</p>")
+print ("<P>Current Time: "+ x + "</p>")
+print ("<p>Your IP Address: "+ y + "</p>")
 print ("</BODY></HTML>")
