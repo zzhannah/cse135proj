@@ -16,8 +16,8 @@ for arg in args:
     t=arg.split('=')
     if len(t)>1: k, v=arg.split('='); POST[k]=v
 
-if POST['name']:
-   POST['name'] = None
+# if POST['name']:
+#    POST['name'] = None
 
 
 print ("<form action='/cgi-bin/py-sessions-1.py' method='post'>")
