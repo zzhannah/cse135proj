@@ -44,7 +44,7 @@ print ("<input type='hidden' name='name' value='"+ POST['name'] + "'>")
 print ("<button type='submit'>Session 1</button></form>")
 
 print ("<form action='/cgi-bin/py-sessions-2.py' method='post'>")
-print ("<input type='hidden' name='name' value='"+ POST['name'] + "'>")
+print ("<input type='hidden' name='name1' value='"+ POST['name'] + "'>")
 print ("<button type='submit'>Session 2</button></form>")
 
 print ("<a href='/py-cgiform.html'>Python CGI Form</a>")
