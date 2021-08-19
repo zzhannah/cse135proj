@@ -12,11 +12,12 @@ print "<title>Python Session Page 1</title>"
 print "</head>"
 print "<body>"
 print "<h1 align='center'>Python Session Page 1</h1><hr>"
+POST{}
 args=sys.stdin.read()
 # if args:
 #     name = "You do not have a name set"
 # else:
-    k, name=args.split('='); POST[k]=name
+k, name=args.split('='); POST[k]=name
 
 username = {'name': name}
 # s.get(setCookieUrl, params=username)
