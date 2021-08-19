@@ -24,15 +24,15 @@ for arg in args:
 
 
 
-print ("<a href='/py-cgiform.html'>CGI Form</a><br>")
+# print ("<a href='/py-cgiform.html'>CGI Form</a><br>")
 
-print ("<form action='/cgi-bin/py-sessions-1.py' method='post'>")
-print ("<input type='hidden' name='name' value='"+ POST['name'] + "'>")
-print ("<button type='submit'>Session 1</button></form>")
+# print ("<form action='/cgi-bin/py-sessions-1.py' method='post'> id=form1'")
+# print ("<input type='hidden' name='name' value='"+ POST['name'] + "'>")
+# print ("<button type='submit'>Session 1</button></form>")
 
-print ("<form action='/cgi-bin/py-sessions-2.py' method='post'>")
-print ("<input type='hidden' name='name' value='"+ POST['name'] + "'>")
-print ("<button type='submit'>Session 2</button></form>")
+# print ("<form action='/cgi-bin/py-sessions-2.py' method='post'> id='form'")
+# print ("<input type='hidden' name='name' value='"+ POST['name'] + "'>")
+# print ("<button type='submit'>Session 2</button></form>")
 
 
 print ("</body>")
