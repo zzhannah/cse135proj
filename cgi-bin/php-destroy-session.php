@@ -14,8 +14,8 @@ session_start();
             unset($_SESSION["name"]);
         ?>
         <hr/>
-        <a href="/php-cgiform.html">CGI Form</a><br />
-        <a href="/cgi-bin/php-sessions-1.php">Session Page 1</a><br />
+        <a href="/php-cgiform.html">CGI Form</a><br>
+        <a href="/cgi-bin/php-sessions-1.php">Session Page 1</a><br>
         <a href="/cgi-bin/php-sessions-2.php">Session Page 2</a>
     </body>
 </html>

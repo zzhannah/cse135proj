@@ -1,29 +1,33 @@
 #!/usr/bin/python
 
 # Import modules for CGI handling 
-import cgi, cgitb, os 
+import cgi, cgitb, os, sys
+print ("Content-type:text/html\r\n\r\n")
+print ("<html>")
+print ("<head>")
+print ("<title>Python Session Page 2</title>")
+print ("</head>")
+print ("<body>")
+print ("<h1 align='center'>Python Session Page 2</h1><hr>")
+POST={}
+args=sys.stdin.read().split('&')
 
-# Create instance of FieldStorage 
-form = cgi.FieldStorage() 
+for arg in args: 
+    t=arg.split('=')
+    if len(t)>1: k, v=arg.split('='); POST[k]=v
 
-# Get data from fields
-if form.getvalue('textcontent'):
-   msg = form.getvalue('textcontent')
+if POST['name']: POST['name'] = ""
 
-print "Cache-Control: no-cache\n"
-print "Set-Cookie: destroyed\n"
-print "Content-type:text/html\n"
+print ("<a href='/py-cgiform.html'>CGI Form</a><br>")
 
-print "<html>"
-print "<head>"
-print "<title>Python Session Destroyed</title>"
-print "</head>"
+print ("<form action='/cgi-bin/py-sessions-1.py' method='post'>")
+print ("<input type='hidden' name='name' value='"+ POST['name'] + "'>")
+print ("<button type='submit'>Session 1</button></form>")
 
-print "<body>"
-print "<a href=\"/cgi-bin/py-sessions-1.py\">Back to Page 1</a>"
-print "<br />" 
-print "<a href=\"/cgi-bin/py-sessions-2.py\">Back to Page 2</a>"
-print "<br />"
-print "<a href=\"/py-cgiform.html\">Python CGI Form</a>"
-print "</body>"
-print "</html>"
+print ("<form action='/cgi-bin/py-sessions-2.py' method='post'>")
+print ("<input type='hidden' name='name' value='"+ POST['name'] + "'>")
+print ("<button type='submit'>Session 2</button></form>")
+
+print ("</body>")
+print ("</html>")
+
