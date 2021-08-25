@@ -1,0 +1,18 @@
+{
+  "static": [
+    {
+      "name": "sam",
+      "age": "64",
+      "id": 1
+    },
+    {
+      "name": "jason",
+      "age": "98",
+      "id": 2
+    }
+  ],
+  "performance": [],
+  "activity": {
+    "name": "typicode"
+  }
+}
