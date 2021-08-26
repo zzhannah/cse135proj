@@ -3,9 +3,8 @@ const mongoose = require('mongoose')
 
 const activitySchema = new mongoose.Schema({
 
-    _id: {
-        type: Number,
-        required: true
+    id: {
+        type: Number
     },
     mousePosition: {
         type: String

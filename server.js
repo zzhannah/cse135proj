@@ -37,8 +37,8 @@ app.use('/static', staticRouter)
 const performanceRouter = require('./routes/performances')
 app.use('/performance',performanceRouter)
 
-const alienRouter = require('./routes/activities')
-app.use('/activity',alienRouter)
+const activityRouter = require('./routes/activities')
+app.use('/activity',activityRouter)
 
 
 app.listen(3000);

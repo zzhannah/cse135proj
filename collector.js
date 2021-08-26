@@ -140,8 +140,7 @@ function postStatic() {
         'innerHeight': window.innerHeight
       })
     }).then(function(response){
-      const content = response;
-      ID = content._id;
+      ID = response._id;
       console.log(content);
     });
     
@@ -186,7 +185,7 @@ function postPerformance(){
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        '_id': ID,
+        'id': ID,
         'duration': data.performance.duration,
         'transferSize': data.performance.transferSize,
         'decodedBodySize': data.performance.decodedBodySize,
@@ -296,7 +295,7 @@ setInterval(function postActivity(){
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        '_id': ID,
+        'id': ID,
         'mousePosition': data.activity.mousePosition.clientX,
         'mouseClicks': data.activity.mouseClicks,
         'keydown': data.activity.keystrokes.keydown,
