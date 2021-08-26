@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 var MongoClient = require('mongodb').MongoClient;
 
 const url = 'mongodb://localhost/data';
-const url2 = 'mongodb://localhost';
+const url2 = 'mongodb://localhost/data';
 const app = express()
 
 MongoClient.connect(url2, function(err, client) {
