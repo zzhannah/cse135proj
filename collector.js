@@ -178,8 +178,7 @@ function collectPerformanceData() {
 }
 
 function postPerformance(){
-  
-  (async () => {
+
     const url = 'https://cse135proj.site/json/performance';
     const rawResponse = await fetch(url, {
       method: 'POST',
@@ -194,11 +193,12 @@ function postPerformance(){
         'domContentLoadedEventStart': data.performance.domContentLoadedEventStart,
         'domContentLoadedEventEnd': data.performance.domContentLoadedEventEnd
       })
+    }).then(function(response){
+      const content = response;
+      console.log(content);
     });
-    const content = await rawResponse;
-  
-    console.log(content);
-  })();
+
+
 
 }
 
@@ -289,7 +289,6 @@ function bindActivityEvents() {
 
 setInterval(function postActivity(){
   
-  (async () => {
     const url = 'https://cse135proj.site/json/activity';
     const rawResponse = await fetch(url, {
       method: 'POST',
@@ -303,11 +302,10 @@ setInterval(function postActivity(){
         'keydown': data.activity.keystrokes.keydown,
         'keyup': data.activity.keystrokes.keyup
       })
+    }).then(function(response){
+      const content = response;
+      console.log(content);
     });
-    const content = await rawResponse;
-    
-    console.log(content);
-  })();
 
 }, 30000);
 /**
