@@ -48,8 +48,9 @@
                 id: 'myChart1',
                 data: myConfig1,
                 height: "30%",
-                width: "180%"
+                width: "80%"
                 });
+
 
                 var myConfig2 = {
                     "type": "line",
@@ -71,6 +72,39 @@
                     data: myConfig2,
                     height: "30%",
                     width: "80%"
+                  });
+
+                  var myConfig3 = {
+                    "type": "ring",
+                    "title": {
+                      "text": "transferSize duration decodedBodySize domContentLoadedEventEnd domContentLoadedEventStart"
+                    },
+                    "plot": {
+                      //Use the "slice" attribute to adjust the size of the donut ring.
+                    },
+                    "series": [{
+                        "values": domContentLoadedEventEnd[1]
+                      },
+                      {
+                        "values": trans[1]
+                      },
+                      {
+                        "values": duration[1]
+                      },
+                      {
+                        "values": decodedBodySize[1]
+                      },
+                      {
+                        "values": domContentLoadedEventStart[1]
+                      }
+                    ]
+                  };
+               
+                  zingchart.render({
+                    id: 'myChart3',
+                    data: myConfig3,
+                    height: 400,
+                    width: "100%"
                   });
             }).catch(error => {
                 console.log(error.message);
