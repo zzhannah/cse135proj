@@ -27,6 +27,7 @@
  * let you know that those objects have been set and are ready to be sent.
  * Activity doesn't have one since it's continuous
  */
+const ID;
 export const data = {
   static: {
     userAgent: null,
@@ -137,7 +138,7 @@ function postStatic() {
       })
     });
     const content = await rawResponse.json();
-  
+    ID = content.id;
     console.log(content);
   })();
 }
@@ -182,6 +183,7 @@ function postPerformance(){
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
+        'id': ID,
         'duration': data.performance.duration,
         'transferSize': data.performance.transferSize,
         'decodedBodySize': data.performance.decodedBodySize,
@@ -291,6 +293,7 @@ setInterval(function postActivity(){
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
+        'id': ID,
         'mousePosition': data.activity.mousePosition,
         'mouseClicks': data.activity.mouseClicks,
         'keydown': data.activity.keystrokes.keydown,
@@ -298,7 +301,7 @@ setInterval(function postActivity(){
       })
     });
     const content = await rawResponse.json();
-  
+    
     console.log(content);
   })();
 
