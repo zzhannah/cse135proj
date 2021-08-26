@@ -24,7 +24,7 @@
     var duration = [];
     var transferSize = [];
     var decodeBodySize = [];
-    var test = [123,456,678];
+    var test = [];
     const url = 'https://cse135proj.site/api/performance';
     fetch(url).then(response => {
             response.json().then(data => {
@@ -36,6 +36,7 @@
                     duration[i] = element.duration;
                     transferSize[i] = element.transferSize;
                     decodeBodySize[i] = element.decodeBodySize;
+                    test[i] = i;
                     i++;
                   }
                 });
