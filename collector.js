@@ -27,7 +27,7 @@
  * let you know that those objects have been set and are ready to be sent.
  * Activity doesn't have one since it's continuous
  */
-const ID;
+const ID = '';
 export const data = {
   static: {
     userAgent: null,
