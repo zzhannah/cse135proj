@@ -17,8 +17,11 @@ var performance;
 function inti(){
     postPerformance;
     postStatic;
-    document.getElementById('grid1').innerHTML = static;
-    document.getElementById('grid1').innerHTML = performance;
+    document.getElementById('grid1').data = static;
+    console.log(static);
+    document.getElementById('grid1').data = performance;
+    console.log(performance);
+
 }
 function postPerformance(){
 
