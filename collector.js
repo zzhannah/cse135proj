@@ -125,7 +125,7 @@ function collectStaticData() {
 function postStatic() {
   console.log('1connected...')
 
-    const url = 'https://cse135proj.site/json/api/static';
+    const url = 'https://cse135proj.site/json/static';
     console.log('c2onnected...')
     fetch(url, {
       method: 'POST',
@@ -141,8 +141,8 @@ function postStatic() {
       })
     }).then(function(response){
       const content = response.json();
-    ID = content._id;
-    console.log(content);
+      ID = content._id;
+      console.log(content);
     });
     
 }
@@ -180,7 +180,7 @@ function collectPerformanceData() {
 function postPerformance(){
   
   (async () => {
-    const url = 'https://cse135proj.site/json/api/performance';
+    const url = 'https://cse135proj.site/json/performance';
     const rawResponse = await fetch(url, {
       method: 'POST',
       headers: {
@@ -290,7 +290,7 @@ function bindActivityEvents() {
 setInterval(function postActivity(){
   
   (async () => {
-    const url = 'https://cse135proj.site/json/api/activity';
+    const url = 'https://cse135proj.site/json/activity';
     const rawResponse = await fetch(url, {
       method: 'POST',
       headers: {

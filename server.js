@@ -32,13 +32,13 @@ con.on('open', () => {
 app.use(express.json())
 
 const staticRouter = require('./routes/statics')
-app.use('/api/static', staticRouter)
+app.use('/static', staticRouter)
 
 const performanceRouter = require('./routes/performances')
-app.use('/api/performance',performanceRouter)
+app.use('/performance',performanceRouter)
 
 const alienRouter = require('./routes/activities')
-app.use('/api/activity',alienRouter)
+app.use('/activity',alienRouter)
 
 
 app.listen(3000);
