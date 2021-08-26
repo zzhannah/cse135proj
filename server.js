@@ -2,8 +2,9 @@
 
 var express = require('express');
 const mongoose = require('mongoose');
+console.log('connected...')
 const url = 'mongodb://143.244.179.141:27017/?compressors=disabled&gssapiServiceName=mongodb/data';
-
+console.log('connected...')
 const app = express()
 // Returns an Express server
 
