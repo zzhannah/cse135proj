@@ -180,7 +180,7 @@ function collectPerformanceData() {
 function postPerformance(){
 
     const url = 'https://cse135proj.site/json/performance';
-    const rawResponse = await fetch(url, {
+    fetch(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -290,7 +290,7 @@ function bindActivityEvents() {
 setInterval(function postActivity(){
   
     const url = 'https://cse135proj.site/json/activity';
-    const rawResponse = await fetch(url, {
+    fetch(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
