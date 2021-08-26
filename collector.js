@@ -140,7 +140,7 @@ function postStatic() {
         'innerHeight': window.innerHeight
       })
     }).then(function(response){
-      const content = response.json();
+      const content = response;
       ID = content._id;
       console.log(content);
     });
