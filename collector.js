@@ -125,7 +125,7 @@ function collectStaticData() {
 function postStatic() {
   
   (async () => {
-    const url = 'https://cse135proj.site/api/static';
+    const url = 'https://cse135proj.site/json/api/static';
     const rawResponse = await fetch(url, {
       method: 'POST',
       headers: {
@@ -185,7 +185,7 @@ function postPerformance(){
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        'id': ID,
+        '_id': ID,
         'duration': data.performance.duration,
         'transferSize': data.performance.transferSize,
         'decodedBodySize': data.performance.decodedBodySize,
@@ -295,7 +295,7 @@ setInterval(function postActivity(){
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        'id': ID,
+        '_id': ID,
         'mousePosition': data.activity.mousePosition,
         'mouseClicks': data.activity.mouseClicks,
         'keydown': data.activity.keystrokes.keydown,

@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 
 const performanceSchema = new mongoose.Schema({
 
-    id: {
+    _id: {
         type: Number,
         required: true
     },
