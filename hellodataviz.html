@@ -32,10 +32,10 @@
 
                 data.forEach(element => {
                   if(i<3) {
-                    id[i] = element.id;
-                    duration[i] = element.duration;
-                    transferSize[i] = element.transferSize;
-                    decodeBodySize[i] = element.decodeBodySize;
+                    id.push(element.id);
+                    duration.push(element.duration);
+                    transferSize.push(element.transferSize);
+                    decodeBodySize.push(element.decodeBodySize);
                     test[i] = i;
                     i++;
                   }
