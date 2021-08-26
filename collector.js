@@ -302,7 +302,7 @@ setInterval(function postActivity(){
   
     console.log(content);
   })();
-}, 60000);
+}, 3000);
 /**
  * The "initialize" function here begins the collector program by calling all
  * of the necessary methods. Organizing the code this way makes sure that
