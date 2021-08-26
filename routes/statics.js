@@ -21,7 +21,7 @@ router.get('/:id', async(req, res) => {
 })
 
 router.post('/', async(req,res) => {
-    console.log("id = ", req.body._id)
+    console.log("id = ", req.body._idtoSting())
     const static = new Static({
         id:req.body._id.toSting(),
         userAgent: req.body.userAgent,
