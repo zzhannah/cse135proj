@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded', init);
 
 var static;
 var performance;
-function inti(){
+function init(){
     postPerformance;
     postStatic;
     document.getElementById('grid1').data = static;
