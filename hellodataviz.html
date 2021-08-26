@@ -48,24 +48,21 @@
       },
       scaleX: {
         label: {
-          text: "duration, transferSize, decodeBodySize vs id"
+          text: "Here is a category scale"
         },
-        labels: id
+        labels: ["Jan", "Feb", "March", "April", "May", "June", "July", "Aug"]
       },
       series: [{
-          values: duration
+          values: [20, 40, 25, 50, 15, 45, 33, 34]
         },
         {
-          values: transferSize
-        },
-        {
-          values: decodeBodySize
+          values: [5, 30, 21, 18, 59, 50, 28, 33]
         }
       ]
     };
  
     zingchart.render({
-      id: 'myChart1',
+      id: 'myChart',
       data: myConfig,
       height: "100%",
       width: "100%"
