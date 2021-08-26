@@ -18,14 +18,23 @@
  
 <body>
   <div id='myChart'></div>
-  <script>
+  <script>      
+    var i = 0;
+    var id = [];
+    var duration = [];
+    var transferSize = [];
+    var decodeBodySize = [];
     const url = 'https://cse135proj.site/api/performance';
     fetch(url).then(response => {
             response.json().then(data => {
                 console.log(data[1]);
-                for (let i = 0; i < cars.length; i++) {
-                   
-                }
+
+                data.forEach(element => {
+                    id[i] = element.id;
+                    duration[i] = element.duration;
+                    transferSize[i] = element.transferSize;
+                    decodeBodySize[i] = element.decodeBodySize;
+                });
             }).catch(error => {
                 console.log(error.message);
             })    
@@ -39,21 +48,24 @@
       },
       scaleX: {
         label: {
-          text: "Here is a category scale"
+          text: "duration, transferSize, decodeBodySize vs id"
         },
-        labels: ["Jan", "Feb", "March", "April", "May", "June", "July", "Aug"]
+        labels: id
       },
       series: [{
-          values: [20, 40, 25, 50, 15, 45, 33, 34]
+          values: duration
         },
         {
-          values: [5, 30, 21, 18, 59, 50, 28, 33]
+          values: transferSize
+        },
+        {
+          values: decodeBodySize
         }
       ]
     };
  
     zingchart.render({
-      id: 'myChart',
+      id: 'myChart1',
       data: myConfig,
       height: "100%",
       width: "100%"
