@@ -48,7 +48,7 @@
                 id: 'myChart1',
                 data: myConfig1,
                 height: "30%",
-                width: "50%"
+                width: "80%"
                 });
 
 
@@ -71,9 +71,9 @@
                     id: 'myChart2',
                     data: myConfig2,
                     height: "30%",
-                    width: "50%"
+                    width: "80%"
                   });
-
+                  const total = domContentLoadedEventEnd[1]+trans[1]+duration[1]+decodedBodySize[1]+domContentLoadedEventStart[1];
                   var myConfig3 = {
                     "type": "ring",
                     "title": {
@@ -83,19 +83,19 @@
                       //Use the "slice" attribute to adjust the size of the donut ring.
                     },
                     "series": [{
-                        "values": domContentLoadedEventEnd[1]
+                        "values": domContentLoadedEventEnd[1]/total
                       },
                       {
-                        "values": trans[1]
+                        "values": trans[1]/total
                       },
                       {
-                        "values": duration[1]
+                        "values": duration[1]/total
                       },
                       {
-                        "values": decodedBodySize[1]
+                        "values": decodedBodySize[1]/total
                       },
                       {
-                        "values": domContentLoadedEventStart[1]
+                        "values": domContentLoadedEventStart[1]/total
                       }
                     ]
                   };
@@ -104,8 +104,10 @@
                     id: 'myChart3',
                     data: myConfig3,
                     height: "30%",
-                    width: "50%"
+                    width: "80%"
                   });
+
+
             }).catch(error => {
                 console.log(error.message);
             })    
