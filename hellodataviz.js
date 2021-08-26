@@ -53,11 +53,11 @@
 
                 var myConfig2 = {
                     "type": "line",
-                    scaleX: {
-                        label: {
-                        text: "domContentLoadedEventStart and End / id"
+                    "scaleX": {
+                        "label": {
+                        "text": "domContentLoadedEventStart and End / id"
                         },
-                        labels: id
+                        "labels": id
                     },
                     "series": [{
                       "values": domContentLoadedEventEnd
