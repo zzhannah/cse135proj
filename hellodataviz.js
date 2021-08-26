@@ -12,26 +12,34 @@
     let decodeBodySize1;
     let decodeBodySize2;
     let decodeBodySize3;
+    var id = [];
+    var trans = [];
+    var duration = [];
+    var decodeBodySize = []
     window.addEventListener('DOMContentLoaded', init);
     function init(){
       const url = 'https://cse135proj.site/api/performance';
       fetch(url).then(response => {
             response.json().then(data => {
               console.log(data[1].id);
-                id1 = data[1].id;
-                console.log('dd', id1);
-                console.log('cc', id2);
-                id2 = data[2].id;
-                id3 = data[2].id;
-                transferSize1 = data[1].transferSize;
-                transferSize2 = data[2].transferSize;
-                transferSize3 = data[3].transferSize;
-                duration1  = data[1].duration;
-                duration2  = data[2].duration;
-                duration3  = data[3].duration;
-                decodeBodySize1  = data[1].decodeBodySize;
-                decodeBodySize2  = data[2].decodeBodySize;
-                decodeBodySize3  = data[3].decodeBodySize;   
+                // id1 = data[1].id;
+                // id2 = data[2].id;
+                // id3 = data[2].id;
+                // transferSize1 = data[1].transferSize;
+                // transferSize2 = data[2].transferSize;
+                // transferSize3 = data[3].transferSize;
+                // duration1  = data[1].duration;
+                // duration2  = data[2].duration;
+                // duration3  = data[3].duration;
+                // decodeBodySize1  = data[1].decodeBodySize;
+                // decodeBodySize2  = data[2].decodeBodySize;
+                // decodeBodySize3  = data[3].decodeBodySize;   
+                for(i = 0; i < 5; i++){
+                    id[i] = data[i].id;
+                    trans[i] = data[i].transferSize;
+                    duration[i] = data[i].duration;
+                    decodeBodySize[i] = data[i].decodeBodySize;
+                }
                 ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"];
                 let myConfig = {
                 type: "bar",
@@ -42,16 +50,16 @@
                     label: {
                     text: "Here is a category scale"
                     },
-                    labels: [id1, id2, id3]
+                    labels: id
                 },
                 series: [{
-                    values: [transferSize1, transferSize2, transferSize3]
+                    values: trans
                     },
                     {
-                    values: [duration1, duration2, duration3]
+                    values: duration
                     },
                     {
-                    values: [decodeBodySize1, decodeBodySize2, decodeBodySize3]
+                    values: decodeBodySize
                     }
                 ]
                 };
@@ -60,7 +68,7 @@
                 id: 'myChart',
                 data: myConfig,
                 height: "30%",
-                width: "30%"
+                width: "100%"
                 });
             }).catch(error => {
                 console.log(error.message);
