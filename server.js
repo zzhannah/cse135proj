@@ -3,6 +3,7 @@
 var express = require('express');
 const mongoose = require('mongoose');
 const url = 'mongodb://localhost/data';
+var jsonServer = require('json-server');
 
 const app = express()
 // Returns an Express server
@@ -25,10 +26,11 @@ server.use(jsonServer.defaults());
 // Add custom routes
 
 // Returns an Express router
-var router = jsonServer.router('db.json');
-app.use(router);
-app.use(express.json())
+// var router = jsonServer.router('db.json');
+// app.use(router);
 
+app.use(express.json())
+app.use('/api', jsonServer.router('db.json'));
 // // server.use(router);
 // const staticRouter = require('./routes/statics')
 // app.use('/api/static', staticRouter)
