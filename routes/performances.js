@@ -37,4 +37,14 @@ router.post('/', async(req,res) => {
         res.json('Error')
     }
 })
+
+router.delete('/:id',async(req,res)=> {
+    try{
+        const performance = await Performance.findById(req.params.id) 
+        const a1 = await performance.delete()
+        res.json(a1)   
+    }catch(err){
+        res.send('Error')
+    }
+})
 module.exports = router

@@ -36,4 +36,15 @@ router.post('/', async(req,res) => {
         res.json('Error')
     }
 })
+
+router.delete('/:id',async(req,res)=> {
+    try{
+        const static = await Static.findById(req.params.id) 
+        const a1 = await static.delete()
+        res.json(a1)   
+    }catch(err){
+        res.send('Error')
+    }
+})
+
 module.exports = router

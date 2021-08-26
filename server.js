@@ -1,9 +1,11 @@
 // app.js file
 
+
+
 var express = require('express');
 const mongoose = require('mongoose');
 
-const url = 'mongodb://localhost/data';
+const url = 'mongodb+srv://root:hoT.9708t@cluster0.ctfa5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 const app = express()
 
 // Returns an Express server

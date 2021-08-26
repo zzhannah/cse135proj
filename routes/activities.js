@@ -36,4 +36,15 @@ router.post('/', async(req,res) => {
         res.json('Error')
     }
 })
+
+router.delete('/:id',async(req,res)=> {
+    try{
+        const activity = await Activity.findById(req.params.id) 
+        const a1 = await activity.delete()
+        res.json(a1)   
+    }catch(err){
+        res.send('Error')
+    }
+})
+
 module.exports = router
