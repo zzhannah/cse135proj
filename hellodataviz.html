@@ -31,7 +31,7 @@
               console.log(data);
               for(var i=0;i<data.length;i++){
                   id.push(JSON.stringify(data[i].id));
-                  duration.push(JSON.stringify(data[i].duration));
+                  duration[i] = JSON.stringify(data[i].duration);
                   transferSize.push(data[i].transferSize);
                   decodeBodySize.push(data[i].decodeBodySize);
                   test[i] = i;
