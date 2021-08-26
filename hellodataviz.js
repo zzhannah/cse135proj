@@ -1,5 +1,4 @@
-  // I can't get data.element into an array, once I put them into an array
-  // the array becomes an object, so i have to use a silly solution here.
+
     var id = [];
     var trans = [];
     var duration = [];
