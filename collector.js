@@ -125,7 +125,7 @@ function collectStaticData() {
 function postStatic() {
   
   (async () => {
-    const url = 'https://cse135proj.site/json/static';
+    const url = 'https://cse135proj.site/api/static';
     const rawResponse = await fetch(url, {
       method: 'POST',
       headers: {
