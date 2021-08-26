@@ -34,11 +34,11 @@ app.use(express.json())
 const staticRouter = require('./routes/statics')
 app.use('/api/static', staticRouter)
 
-const performanceRouter = require('./routes/performances')
-app.use('/api/performance',performanceRouter)
+// const performanceRouter = require('./routes/performances')
+// app.use('/api/performance',performanceRouter)
 
-const alienRouter = require('./routes/activities')
-app.use('/api/activity',alienRouter)
+// const alienRouter = require('./routes/activities')
+// app.use('/api/activity',alienRouter)
 
 
 app.listen(3000);
