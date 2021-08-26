@@ -31,8 +31,8 @@ con.on('open', () => {
 
 app.use(express.json())
 
-const staticRouter = require('./routes/statics')
-app.use('/static', staticRouter)
+// const staticRouter = require('./routes/statics')
+// app.use('/static', staticRouter)
 
 const performanceRouter = require('./routes/performances')
 app.use('/performance',performanceRouter)
