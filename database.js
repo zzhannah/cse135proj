@@ -28,7 +28,7 @@ function postPerformance(){
             'Content-Type': 'application/json'
         }
     }).then(function(response){
-        document.getElementById('grid2').data = performance;
+        document.getElementById('grid2').data = response;
     });
   }
 
@@ -40,7 +40,7 @@ function postStatic() {
         'Content-Type': 'application/json'
       }
     }).then(function(response){
-        document.getElementById('grid1').data = static;
+        document.getElementById('grid1').data = response;
     });
       
   }
