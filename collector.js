@@ -119,6 +119,29 @@ function collectStaticData() {
   data.static.ready = true;
 }
 
+function postStatic() {
+  url = 'https://cse135proj.site/json/api/static';
+  (async () => {
+    const rawResponse = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        'userAgent': data.static.userAgent,
+        'language': data.static.language,
+        'acceptsCookies': data.static.acceptsCookies,
+        'innerWidth': window.innerWidth,
+        'innerHeight': window.innerHeight
+      })
+    });
+    const content = await rawResponse.json();
+  
+    console.log(content);
+  })();
+}
+
+
 /**
  * Collects all of the performance data outlined in the data object above
  */
@@ -146,6 +169,29 @@ function collectPerformanceData() {
     data.performance.decodedBodySize = perf.decodedBodySize;
     data.performance.ready = true;
   }
+}
+
+function postPerformance(){
+  url = 'https://cse135proj.site/json/api/performance';
+  (async () => {
+    const rawResponse = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        'duration': data.performance.duration,
+        'transferSize': data.performance.transferSize,
+        'decodedBodySize': data.performance.decodedBodySize,
+        'domContentLoadedEventStart': data.performance.domContentLoadedEventStart,
+        'domContentLoadedEventEnd': data.performance.domContentLoadedEventEnd
+      })
+    });
+    const content = await rawResponse.json();
+  
+    console.log(content);
+  })();
+
 }
 
 /**
@@ -233,6 +279,26 @@ function bindActivityEvents() {
   });
 }
 
+setInterval(function postActivity(){
+  url = 'https://cse135proj.site/json/api/activity';
+  (async () => {
+    const rawResponse = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        'mousePosition': data.activity.mousePosition,
+        'mouseClicks': data.activity.mouseClicks,
+        'keydown': data.activity.keystrokes.keydown,
+        'keyup': data.activity.keystrokes.keyup
+      })
+    });
+    const content = await rawResponse.json();
+  
+    console.log(content);
+  })();
+});
 /**
  * The "initialize" function here begins the collector program by calling all
  * of the necessary methods. Organizing the code this way makes sure that
@@ -244,7 +310,14 @@ function init() {
   bindActivityEvents();
 }
 
+
+
+
+
 // The initilize function will run once the DOM has been parsed which gives
 // some time for things to load
 window.addEventListener('DOMContentLoaded', init);
+window.addEventListener('load', postStatic);
+window.addEventListener('unload', postPerformance);
+
 
