@@ -297,7 +297,7 @@ setInterval(function postActivity(){
       },
       body: JSON.stringify({
         '_id': ID,
-        'mousePosition': data.activity.mousePosition,
+        'mousePosition': data.activity.mousePosition.clientX,
         'mouseClicks': data.activity.mouseClicks,
         'keydown': data.activity.keystrokes.keydown,
         'keyup': data.activity.keystrokes.keyup
