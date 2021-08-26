@@ -17,7 +17,7 @@
                     decodedBodySize[i] = data[i].decodedBodySize;
                 }
                 ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"];
-                let myConfig = {
+                let myConfig1 = {
                 type: "bar",
                 plotarea: {
                     adjustLayout: true
@@ -42,10 +42,28 @@
 
                 zingchart.render({
                 id: 'myChart',
-                data: myConfig,
+                data: myConfig1,
                 height: "30%",
                 width: "100%"
                 });
+
+                var myConfig2 = {
+                    "type": "line",
+                    "series": [{
+                      "values": [20, 40, 25, 50, 15, 45, 33, 34]
+                    }, {
+                      "values": [5, 30, 21, 18, 59, 50, 28, 33]
+                    }, {
+                      "values": [30, 5, 18, 21, 33, 41, 29, 15]
+                    }]
+                  };
+               
+                  zingchart.render({
+                    id: 'myChart',
+                    data: myConfig2,
+                    height: "30%",
+                    width: "100%"
+                  });
             }).catch(error => {
                 console.log(error.message);
             })    
