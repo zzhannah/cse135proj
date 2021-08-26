@@ -265,10 +265,11 @@ function postStatic() {
       'innerWidth': window.innerWidth,
       'innerHeight': window.innerHeight
     })
-  }).then(function(response){
-    ID = response.body._id;
-    console.log(ID);
-    console.log(response);
+  }).then(response=>response.json())
+    .then(data=>{
+      ID = data._id;
+      console.log(ID);
+      console.log(data);
   });
     
 }
