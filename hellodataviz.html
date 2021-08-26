@@ -19,30 +19,40 @@
 <body>
   <div id='myChart'></div>
   <script>      
-    var i = 0;
-    var id = [];
-    var duration = [];
-    var transferSize = [];
-    var decodeBodySize = [];
-    var test = [4,5 ,6 ,6 ,7];
+  // I can't get data.element into an array, once I put them into an array
+  // the array becomes an object, so i have to use a silly solution here.
+    var id1;
+    var id2;
+    var id3;
+    var transferSize1;
+    var transferSize2;
+    var transferSize3;
+    var duration1;
+    var duration2;
+    var duration3;
+    var decodeBodySize1;
+    var decodeBodySize2;
+    var decodeBodySize3;
     const url = 'https://cse135proj.site/api/performance';
     fetch(url).then(response => {
             response.json().then(data => {
               console.log(data);
-              for(var i=0;i<data.length;i++){
-                  id.push(JSON.stringify(data[i].id));
-                  duration[i] = data[i].duration;
-                  transferSize.push(data[i].transferSize);
-                  decodeBodySize.push(data[i].decodeBodySize);
-                  test[i] = i;
-              }
+                id1 = data[1].id;
+                id2 = data[2].id;
+                id3 = data[2].id;
+                transferSize1 = data[1].transferSize;
+                transferSize2 = data[2].transferSize;
+                transferSize3 = data[3].transferSize;
+                duration1  = data[1].duration;
+                duration2  = data[2].duration;
+                duration3  = data[3].duration;
+                decodeBodySize1  = data[1].decodeBodySize;
+                decodeBodySize2  = data[2].decodeBodySize;
+                decodeBodySize3  = data[3].decodeBodySize;
             }).catch(error => {
                 console.log(error.message);
             })    
     });
-    console.log(id[2]);
-    console.log(Object.values(duration));
-    console.log(test);
 
     ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"];
     var myConfig = {
@@ -54,12 +64,17 @@
         label: {
           text: "Here is a category scale"
         },
-        labels: test
+        labels: [id1, id2, id3]
       },
       series: [{
-          values: test
+          values: [transferSize1, transferSize2, transferSize3]
+        },
+        {
+          values: [duration1, duration2, duration3]
+        },
+        {
+          values: [decodeBodySize1, decodeBodySize2, decodeBodySize3]
         }
-        
       ]
     };
  
