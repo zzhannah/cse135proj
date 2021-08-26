@@ -252,7 +252,7 @@ function init() {
 }
 function postStatic() {
 
-  const url = 'https://cse135proj.site/json/static';
+  const url = 'https://cse135proj.site/api/static';
   fetch(url, {
     method: 'POST',
     headers: {
@@ -274,7 +274,7 @@ function postStatic() {
 
 function postPerformance(){
 
-  const url = 'https://cse135proj.site/json/performance';
+  const url = 'https://cse135proj.site/api/performance';
   fetch(url, {
     method: 'POST',
     headers: {
@@ -296,7 +296,7 @@ function postPerformance(){
 
 setInterval(function postActivity(){
   
-  const url = 'https://cse135proj.site/json/activity';
+  const url = 'https://cse135proj.site/api/activity';
   fetch(url, {
     method: 'POST',
     headers: {

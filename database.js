@@ -22,7 +22,7 @@ function init(){
 }
 function postPerformance(){
 
-    const url = 'https://cse135proj.site/json/performance';
+    const url = 'https://cse135proj.site/api/performance';
     fetch(url).then(response => {
             response.json().then(data => {
                 //console.log(data);
@@ -34,7 +34,7 @@ function postPerformance(){
 }
 
 function postStatic() {
-    const url = 'https://cse135proj.site/json/static';
+    const url = 'https://cse135proj.site/api/static';
     fetch(url).then(response => {
         response.json().then(data => {
             //console.log(data);
@@ -47,10 +47,10 @@ function postStatic() {
 }
 
 function postActivity() {
-    const url = 'https://cse135proj.site/json/activity';
+    const url = 'https://cse135proj.site/api/activity';
     fetch(url).then(response => {
         response.json().then(data => {
-            //console.log(data);
+            console.log(data);
             document.getElementById('grid3').data = data;
         }).catch(error => {
             console.log(error.message);
