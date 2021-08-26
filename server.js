@@ -2,8 +2,7 @@
 
 var express = require('express');
 const mongoose = require('mongoose');
-const url = 'mongodb://localhost/data';
-var jsonServer = require('json-server');
+const url = 'mongodb://143.244.179.141:27017/?compressors=disabled&gssapiServiceName=mongodb/data';
 
 const app = express()
 // Returns an Express server
@@ -20,7 +19,7 @@ con.on('open', () => {
 //     next();
 //   });
 // Set default middlewares (logger, static, cors and no-cache)
-server.use(jsonServer.defaults());
+//app.use(jsonServer.defaults());
 
 
 // Add custom routes
@@ -30,16 +29,15 @@ server.use(jsonServer.defaults());
 // app.use(router);
 
 app.use(express.json())
-app.use('/api', jsonServer.router('db.json'));
-// // server.use(router);
-// const staticRouter = require('./routes/statics')
-// app.use('/api/static', staticRouter)
+// server.use(router);
+const staticRouter = require('./routes/statics')
+app.use('/api/static', staticRouter)
 
-// const performanceRouter = require('./routes/performances')
-// app.use('/api/performance',performanceRouter)
+const performanceRouter = require('./routes/performances')
+app.use('/api/performance',performanceRouter)
 
-// const alienRouter = require('./routes/activities')
-// app.use('/api/activity',alienRouter)
+const alienRouter = require('./routes/activities')
+app.use('/api/activity',alienRouter)
 
 
 app.listen(3000);
