@@ -281,7 +281,7 @@ function bindActivityEvents() {
   });
 }
 
-setTimeout(function postPerformance(){
+setTimeout(function postActivity(){
   
   (async () => {
     const url = 'https://cse135proj.site/json/api/activity';
@@ -326,6 +326,7 @@ function init() {
 // some time for things to load
 window.addEventListener('DOMContentLoaded', init);
 window.addEventListener('load', postStatic);
+window.addEventListener('load', postActivity);
 window.addEventListener('unload', postPerformance);
 
 
