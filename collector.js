@@ -266,7 +266,7 @@ function postStatic() {
       'innerHeight': window.innerHeight
     })
   }).then(function(response){
-    ID = response._id;
+    ID = response.body._id;
     console.log(ID);
     console.log(response);
   });
