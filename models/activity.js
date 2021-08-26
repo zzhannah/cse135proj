@@ -3,20 +3,12 @@ const mongoose = require('mongoose')
 
 const activitySchema = new mongoose.Schema({
 
-    id: {
-        type: Number
-    },
-    mousePosition: {
-        type: Array
-    },
-    mouseClicks: {
-        type: Array
-    },
-    keydown: {
-        type: Array
-    },
-    keyup: {
-        type: Array 
+    id: String,
+    mousePosition: Schema.Types.Mixed,
+    mouseClicks: Schema.Types.Mixed,
+    keystrokes: {
+        keydown: Schema.Types.Mixed,
+        keyup: Schema.Types.Mixed
     }
 })
 
