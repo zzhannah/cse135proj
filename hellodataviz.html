@@ -31,7 +31,7 @@
               console.log(data);
               for(var i=0;i<data.length;i++){
                   id.push(JSON.stringify(data[i].id));
-                  duration[i] = JSON.stringify(data[i].duration);
+                  duration[i] = data[i].duration;
                   transferSize.push(data[i].transferSize);
                   decodeBodySize.push(data[i].decodeBodySize);
                   test[i] = i;
@@ -41,7 +41,7 @@
             })    
     });
     console.log(id[2]);
-    console.log(duration.json());
+    console.log(Object.values(duration));
     console.log(test);
 
     ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"];
