@@ -30,19 +30,8 @@
               // duration3  = data[3].duration;
               // decodeBodySize1  = data[1].decodeBodySize;
               // decodeBodySize2  = data[2].decodeBodySize;
-              // decodeBodySize3  = data[3].decodeBodySize;
-          }).catch(error => {
-              console.log(error.message);
-          })    
-      });
-      console.log(id1);
-      draw();
-  };
-  
-  
-  function draw(){
-    
-    ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"];
+              // decodeBodySize3  = data[3].decodeBodySize;    
+              ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"];
   let myConfig = {
     type: "bar",
     plotarea: {
@@ -52,7 +41,7 @@
       label: {
         text: "Here is a category scale"
       },
-      labels: [id1, id2, id3]
+      labels: [data[1].id, data[2].id, data[3].id]
     },
     series: [{
         values: [transferSize1, transferSize2, transferSize3]
@@ -71,5 +60,17 @@
     data: myConfig,
     height: "30%",
     width: "30%"
+          }).catch(error => {
+              console.log(error.message);
+          })    
+      });
+      console.log(id1);
+      draw();
+  };
+  
+  
+  function draw(){
+    
+
   });
   };
