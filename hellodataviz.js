@@ -21,19 +21,7 @@
       const url = 'https://cse135proj.site/api/performance';
       fetch(url).then(response => {
             response.json().then(data => {
-              console.log(data[1].id);
-                // id1 = data[1].id;
-                // id2 = data[2].id;
-                // id3 = data[2].id;
-                // transferSize1 = data[1].transferSize;
-                // transferSize2 = data[2].transferSize;
-                // transferSize3 = data[3].transferSize;
-                // duration1  = data[1].duration;
-                // duration2  = data[2].duration;
-                // duration3  = data[3].duration;
-                // decodeBodySize1  = data[1].decodeBodySize;
-                // decodeBodySize2  = data[2].decodeBodySize;
-                // decodeBodySize3  = data[3].decodeBodySize;   
+              console.log(data[1].id); 
                 for(i = 0; i < 5; i++){
                     id[i] = data[i].id;
                     trans[i] = data[i].transferSize;
