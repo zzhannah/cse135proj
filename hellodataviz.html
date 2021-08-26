@@ -31,11 +31,13 @@
                 console.log(data);
 
                 data.forEach(element => {
+                  if(i<5) {
                     id[i] = element.id;
                     duration[i] = element.duration;
                     transferSize[i] = element.transferSize;
                     decodeBodySize[i] = element.decodeBodySize;
-                    if(i<5) i++;
+                    i++;
+                  }
                 });
             }).catch(error => {
                 console.log(error.message);
