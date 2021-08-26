@@ -10,9 +10,40 @@
 //     });
 //   })
 
-// window.addEventListener('DOMContentLoaded', init);
+window.addEventListener('DOMContentLoaded', init);
 
-// function inti(){
+var static;
+var performance;
+function inti(){
+    postPerformance;
+    postStatic;
+    document.getElementById('grid1').innerHTML = static;
+    document.getElementById('grid1').innerHTML = performance;
+}
+function postPerformance(){
 
+    const url = 'https://cse135proj.site/json/performance';
+    fetch(url, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then(function(response){
+        performance = JSON.stringify(response);
+        console.log(response);
+    });
+  }
 
-// }
+function postStatic() {
+    const url = 'https://cse135proj.site/json/static';
+    fetch(url, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then(function(response){
+      static = JSON.stringify(response);
+      console.log(response);
+    });
+      
+  }
