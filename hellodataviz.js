@@ -83,19 +83,19 @@
                       //Use the "slice" attribute to adjust the size of the donut ring.
                     },
                     "series": [{
-                        "values": domContentLoadedEventEnd[1]/total
+                        "values": 10*domContentLoadedEventEnd[1]/total
                       },
                       {
-                        "values": trans[1]/total
+                        "values": 10*trans[1]/total
                       },
                       {
-                        "values": duration[1]/total
+                        "values": 10*duration[1]/total
                       },
                       {
-                        "values": decodedBodySize[1]/total
+                        "values": 10*decodedBodySize[1]/total
                       },
                       {
-                        "values": domContentLoadedEventStart[1]/total
+                        "values": 10*domContentLoadedEventStart[1]/total
                       }
                     ]
                   };
@@ -103,7 +103,7 @@
                   zingchart.render({
                     id: 'myChart3',
                     data: myConfig3,
-                    height: "30%",
+                    height: 400,
                     width: "80%"
                   });
 
