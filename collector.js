@@ -267,6 +267,7 @@ function postStatic() {
     })
   }).then(function(response){
     ID = response._id;
+    console.log(ID);
     console.log(response);
   });
     
