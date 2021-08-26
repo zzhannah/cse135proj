@@ -103,7 +103,7 @@
                   zingchart.render({
                     id: 'myChart3',
                     data: myConfig3,
-                    height: 400,
+                    height: "30%",
                     width: "50%"
                   });
             }).catch(error => {
