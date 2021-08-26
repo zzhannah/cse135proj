@@ -254,7 +254,7 @@ function init() {
 
 function fetchUniqueID() {
   const url = 'https://cse135proj.site/api/static';
-  fetch(url).then(response=>response.json())
+  fetch(url, {method: 'POST'}).then(response=>response.json())
   .then(data=>{
     ID = data._id.toString();
     console.log(data);
