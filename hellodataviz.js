@@ -48,7 +48,7 @@
                 id: 'myChart1',
                 data: myConfig1,
                 height: "30%",
-                width: "80%"
+                width: "50%"
                 });
 
 
@@ -71,7 +71,7 @@
                     id: 'myChart2',
                     data: myConfig2,
                     height: "30%",
-                    width: "80%"
+                    width: "50%"
                   });
 
                   var myConfig3 = {
@@ -104,7 +104,7 @@
                     id: 'myChart3',
                     data: myConfig3,
                     height: 400,
-                    width: "100%"
+                    width: "50%"
                   });
             }).catch(error => {
                 console.log(error.message);
