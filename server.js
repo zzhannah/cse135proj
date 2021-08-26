@@ -16,16 +16,16 @@ con.on('open', () => {
     console.log('connected...')
 })
 // Set default middlewares (logger, static, cors and no-cache)
-server.use(jsonServer.defaults());
+//server.use(jsonServer.defaults());
 
 server.use(jsonServer.rewriter({"/api/*": "/$1"}));
 // Add custom routes
 
 
 // Returns an Express router
-// var router = jsonServer.router('db.json');
+var router = jsonServer.router('db.json');
 
-// server.use(router);
+server.use(router);
 const staticRouter = require('./routes/statics')
 server.use('/static', staticRouter)
 
