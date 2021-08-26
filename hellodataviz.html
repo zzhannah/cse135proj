@@ -29,11 +29,11 @@
     fetch(url).then(response => {
             response.json().then(data => {
                 console.log(data);
-                id = data.pluck("id");
-                duration = data.pluck("duration");
-                transferSize = data.pluck("transferSize");
-                decodeBodySize = data.pluck("decodeBodySize");
-                test = data.pluck("test");
+                id = _.pluck(data,"id");
+                duration = _.pluck(data, "duration");
+                transferSize = _.pluck(data,"transferSize");
+                decodeBodySize = _.pluck(data, "decodeBodySize");
+                test = _.pluck(data, "test");
             }).catch(error => {
                 console.log(error.message);
             })    
