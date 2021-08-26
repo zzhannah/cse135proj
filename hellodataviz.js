@@ -70,7 +70,7 @@
                   zingchart.render({
                     id: 'myChart2',
                     data: myConfig2,
-                    height: "30%",
+                    height: "80%",
                     width: "80%"
                   });
                   
