@@ -22,25 +22,23 @@ function init(){
 function postPerformance(){
 
     const url = 'https://cse135proj.site/json/performance';
-    fetch(url, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    }).then(function(response){
-        document.getElementById('grid2').data = response;
-    });
+    fetch(url).then(response => {
+            response.json().then(data => {
+                console.log(data);
+            }).catch(error => {
+                console.log(error.message);
+            })    
+      });
   }
 
 function postStatic() {
     const url = 'https://cse135proj.site/json/static';
-    fetch(url, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    }).then(function(response){
-        document.getElementById('grid1').data = response;
-    });
+    fetch(url).then(response => {
+        response.json().then(data => {
+            console.log(data);
+        }).catch(error => {
+            console.log(error.message);
+        })    
+  });
       
   }
