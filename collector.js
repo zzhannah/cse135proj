@@ -195,7 +195,7 @@ function postPerformance(){
         'domContentLoadedEventEnd': data.performance.domContentLoadedEventEnd
       })
     });
-    const content = await rawResponse.json();
+    const content = await rawResponse;
   
     console.log(content);
   })();
@@ -304,7 +304,7 @@ setInterval(function postActivity(){
         'keyup': data.activity.keystrokes.keyup
       })
     });
-    const content = await rawResponse.json();
+    const content = await rawResponse;
     
     console.log(content);
   })();
