@@ -25,7 +25,7 @@ function postPerformance(){
     const url = 'https://cse135proj.site/api/performance';
     fetch(url).then(response => {
             response.json().then(data => {
-                //console.log(data);
+                console.log(data);
                 document.getElementById('grid1').data = data;
             }).catch(error => {
                 console.log(error.message);
@@ -37,7 +37,7 @@ function postStatic() {
     const url = 'https://cse135proj.site/api/static';
     fetch(url).then(response => {
         response.json().then(data => {
-            //console.log(data);
+            console.log(data);
             document.getElementById('grid2').data = data;
         }).catch(error => {
             console.log(error.message);
