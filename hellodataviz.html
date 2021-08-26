@@ -29,17 +29,11 @@
     fetch(url).then(response => {
             response.json().then(data => {
                 console.log(data);
-
-                data.forEach(element => {
-                  if(i<3) {
-                    id.push(element.id);
-                    duration.push(element.duration);
-                    transferSize.push(element.transferSize);
-                    decodeBodySize.push(element.decodeBodySize);
-                    test.push(i);
-                    i++;
-                  }
-                });
+                id = data.pluck("id");
+                duration = data.pluck("duration");
+                transferSize = data.pluck("transferSize");
+                decodeBodySize = data.pluck("decodeBodySize");
+                test = data.pluck("test");
             }).catch(error => {
                 console.log(error.message);
             })    
