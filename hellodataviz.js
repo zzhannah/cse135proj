@@ -1,6 +1,6 @@
   // I can't get data.element into an array, once I put them into an array
   // the array becomes an object, so i have to use a silly solution here.
-  let id1;
+  var id1;
   let id2;
   let id3;
   let transferSize1;
