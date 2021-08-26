@@ -1,5 +1,13 @@
 // app.js file
 
+const { MongoClient } = require('mongodb');
+const uri1 = "mongodb+srv://root:<password>@cluster0.ctfa5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const client = new MongoClient(uri1, { useNewUrlParser: true, useUnifiedTopology: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
 
 
 var express = require('express');
