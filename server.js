@@ -19,24 +19,25 @@ con.on('open', () => {
 //     next();
 //   });
 // Set default middlewares (logger, static, cors and no-cache)
-//server.use(jsonServer.defaults());
+server.use(jsonServer.defaults());
 
 
 // Add custom routes
 
 // Returns an Express router
 // var router = jsonServer.router('db.json');
+app.use(router);
 app.use(express.json())
 
-// server.use(router);
-const staticRouter = require('./routes/statics')
-app.use('/api/static', staticRouter)
+// // server.use(router);
+// const staticRouter = require('./routes/statics')
+// app.use('/api/static', staticRouter)
 
-const performanceRouter = require('./routes/performances')
-app.use('/api/performance',performanceRouter)
+// const performanceRouter = require('./routes/performances')
+// app.use('/api/performance',performanceRouter)
 
-const alienRouter = require('./routes/activities')
-app.use('/api/activity',alienRouter)
+// const alienRouter = require('./routes/activities')
+// app.use('/api/activity',alienRouter)
 
 
 app.listen(3000);
