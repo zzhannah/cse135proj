@@ -267,7 +267,7 @@ function postStatic() {
     })
   }).then(response=>response.json())
     .then(data=>{
-      ID = data._id;
+      ID = data.userAgent;
       console.log(ID);
       console.log(data);
   });
