@@ -47,8 +47,8 @@
                 zingchart.render({
                 id: 'myChart1',
                 data: myConfig1,
-                height: "30%",
-                width: "80%"
+                height: "100%",
+                width: "100%"
                 });
 
 
