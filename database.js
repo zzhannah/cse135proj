@@ -1,13 +1,18 @@
-var MongoClient = require('mongodb').MongoClient;
-var express = require('express');
-var app = express();
+// var MongoClient = require('mongodb').MongoClient;
+// var express = require('express');
+// var app = express();
 
-var url = 'mongodb://localhost';
-MongoClient.connect(url, {useNewUrlParser:true});
+// var url = 'mongodb://localhost/data';
+// MongoClient.connect(url, {useNewUrlParser:true});
+// app.get('/static', function(req, res) {
+//     db.collection('users').find({}).toArray(function(err, docs) {
+//     res.send(docs);
+//     });
+//   })
 
-app.get('/data', function(req, res) {
-    db.collection('static').find({}).toArray(function(err, docs) {
-    res.send(docs);
-    });
-})
+// window.addEventListener('DOMContentLoaded', init);
 
+// function inti(){
+
+
+// }

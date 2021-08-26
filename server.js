@@ -5,10 +5,10 @@ const mongoose = require('mongoose');
 var MongoClient = require('mongodb').MongoClient;
 
 const url = 'mongodb://localhost/data';
-
+const url2 = 'mongodb://localhost';
 const app = express()
 
-MongoClient.connect(url, function(err, client) {
+MongoClient.connect(url2, function(err, client) {
     db = client.db('data');
   });
 
