@@ -15,8 +15,8 @@
     window.addEventListener('DOMContentLoaded', init);
     function init(){
       const url = 'https://cse135proj.site/api/performance';
-      fetch(url).then((response) => response.json())
-      .then(data => {
+      fetch(url).then(response => {
+            response.json().then(data => {
               console.log(data[1].id);
                 id1 = data[1].id;
                 console.log('dd', id1);
@@ -33,7 +33,8 @@
                 // decodeBodySize3  = data[3].decodeBodySize;
             }).catch(error => {
                 console.log(error.message);
-            });
+            })    
+        });
         console.log(id1);
         draw();
     };
