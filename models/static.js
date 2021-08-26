@@ -3,6 +3,9 @@ const mongoose = require('mongoose')
 
 const staticSchema = new mongoose.Schema({
 
+    id: {
+        type: String
+    },
     userAgent: {
         type: String
     },

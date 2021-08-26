@@ -281,7 +281,7 @@ function postPerformance(){
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      // 'id': ID,
+      'id': ID,
       'duration': data.performance.duration,
       'transferSize': data.performance.transferSize,
       'decodedBodySize': data.performance.decodedBodySize,
