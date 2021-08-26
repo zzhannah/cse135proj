@@ -123,9 +123,10 @@ function collectStaticData() {
 }
 
 function postStatic() {
-  
+  console.log('1connected...')
   (async () => {
     const url = 'https://cse135proj.site/json/api/static';
+    console.log('c2onnected...')
     const rawResponse = await fetch(url, {
       method: 'POST',
       headers: {
@@ -139,6 +140,7 @@ function postStatic() {
         'innerHeight': window.innerHeight
       })
     });
+    console.log('con3nected...')
     const content = await rawResponse.json();
     ID = content._id;
     console.log(content);

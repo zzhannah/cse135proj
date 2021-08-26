@@ -30,15 +30,15 @@ con.on('open', () => {
 // app.use(router);
 
 app.use(express.json())
-// server.use(router);
-// const staticRouter = require('./routes/statics')
-// app.use('/api/static', staticRouter)
+server.use(router);
+const staticRouter = require('./routes/statics')
+app.use('/api/static', staticRouter)
 
-// const performanceRouter = require('./routes/performances')
-// app.use('/api/performance',performanceRouter)
+const performanceRouter = require('./routes/performances')
+app.use('/api/performance',performanceRouter)
 
-// const alienRouter = require('./routes/activities')
-// app.use('/api/activity',alienRouter)
+const alienRouter = require('./routes/activities')
+app.use('/api/activity',alienRouter)
 
 
 app.listen(3000);
