@@ -249,6 +249,16 @@ function init() {
   collectStaticData();
   collectPerformanceData();
   bindActivityEvents();
+  fetchUniqueID();
+}
+
+function fetchUniqueID() {
+  const url = 'https://cse135proj.site/api/static';
+  fetch(url).then(response=>response.json())
+  .then(data=>{
+    ID = data._id.toString();
+    console.log(data);
+  });
 }
 function postStatic() {
 
@@ -259,6 +269,7 @@ function postStatic() {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
+      'id': ID,
       'userAgent': data.static.userAgent,
       'language': data.static.language,
       'acceptsCookies': data.static.acceptsCookies,
@@ -267,7 +278,6 @@ function postStatic() {
     })
   }).then(response=>response.json())
     .then(data=>{
-      ID = data._id.toString();
       console.log(data);
   });
     
