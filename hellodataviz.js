@@ -21,7 +21,7 @@
       const url = 'https://cse135proj.site/api/performance';
       fetch(url).then(response => {
             response.json().then(data => {
-              console.log(data[1].id); 
+              console.log(data); 
                 for(i = 0; i < 5; i++){
                     id[i] = data[i].id;
                     trans[i] = data[i].transferSize;
@@ -36,21 +36,21 @@
                 },
                 scaleX: {
                     label: {
-                    text: "Here is a category scale"
+                    text: "transferSize, duration, decodeBodySize / id"
                     },
                     labels: id
                 },
                 series: [{
-                    values: trans
-                    },
-                    {
-                    values: duration
-                    },
-                    {
-                    values: decodeBodySize
-                    }
+                    values: [20, 40, 25, 50, 15, 45, 33, 34]
+                  },
+                  {
+                    values: [5, 30, 21, 18, 59, 50, 28, 33]
+                  },
+                  {
+                    values: [30, 5, 18, 21, 33, 41, 29, 15]
+                  }
                 ]
-                };
+              };
 
                 zingchart.render({
                 id: 'myChart',
@@ -62,6 +62,4 @@
                 console.log(error.message);
             })    
         });
-        console.log(id1);
-        console.log(id2);
     };
