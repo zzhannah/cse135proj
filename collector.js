@@ -28,6 +28,7 @@
  * Activity doesn't have one since it's continuous
  */
 
+
 var ID = '';
 export const data = {
   static: {
@@ -139,7 +140,7 @@ function postStatic() {
       })
     });
     const content = await rawResponse.json();
-    ID = content.id;
+    ID = content._id;
     console.log(content);
   })();
 }

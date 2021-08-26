@@ -1,27 +1,26 @@
 const Static = require('../models/static')
 const express = require('express')
-const server = express.Router()
+const router = express.Router()
 
-server.get('/', async(req,res) => {
+router.get('/', async(req,res) => {
     try{
         const static = await Static.find()
-        console.log(static)
+        res.json(static)
     }catch(err){
-        console.log('Error ' + err)
+        res.json('Error ' + err)
     }
 })
 
-server.get('/:id', async(req, res) => { 
+router.get('/:id', async(req, res) => { 
     try{
         const static = await Static.findById(req.params.id)
-        console.log(static)
+        res.json(static)
     }catch(err){
-        console.log('Error ' + err)
+        res.json('Error ' + err)
  }
 })
 
-
-server.post('/', async(req,res) => {
+router.post('/', async(req,res) => {
     const static = new Static({
         id : req.body.id,
         userAgent: req.body.userAgent,
@@ -33,9 +32,9 @@ server.post('/', async(req,res) => {
 
     try{
         const a1 =  await static.save() 
-        console.log(a1)
+        res.json(a1)
     }catch(err){
-        console.log('Error')
+        res.json('Error')
     }
 })
-module.exports = server
+module.exports = router
