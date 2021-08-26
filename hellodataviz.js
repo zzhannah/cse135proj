@@ -44,12 +44,12 @@
                 ]
               };
 
-                // zingchart.render({
-                // id: 'myChart1',
-                // data: myConfig1,
-                // height: "30%",
-                // width: "80%"
-                // });
+                zingchart.render({
+                id: 'myChart1',
+                data: myConfig1,
+                height: "30%",
+                width: "80%"
+                });
 
 
                 // var myConfig2 = {
@@ -67,13 +67,13 @@
                 //     }]
                 //   };
                
-                  zingchart.render({
-                    id: 'myChart2',
-                    data: myConfig2,
-                    height: "30%",
-                    width: "80%"
-                  });
-
+                //   zingchart.render({
+                //     id: 'myChart2',
+                //     data: myConfig2,
+                //     height: "30%",
+                //     width: "80%"
+                //   });
+                  
                   const total = domContentLoadedEventEnd[1]+trans[1]+duration[1]+decodedBodySize[1]+domContentLoadedEventStart[1];
                   var myConfig3 = {
                     "type": "ring",
