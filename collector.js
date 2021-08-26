@@ -120,8 +120,9 @@ function collectStaticData() {
 }
 
 function postStatic() {
-  url = 'https://cse135proj.site/json/api/static';
+  
   (async () => {
+    url = 'https://cse135proj.site/json/api/static';
     const rawResponse = await fetch(url, {
       method: 'POST',
       headers: {
@@ -172,8 +173,9 @@ function collectPerformanceData() {
 }
 
 function postPerformance(){
-  url = 'https://cse135proj.site/json/api/performance';
+  
   (async () => {
+    url = 'https://cse135proj.site/json/api/performance';
     const rawResponse = await fetch(url, {
       method: 'POST',
       headers: {
@@ -280,8 +282,9 @@ function bindActivityEvents() {
 }
 
 setInterval(function postActivity(){
-  url = 'https://cse135proj.site/json/api/activity';
+  
   (async () => {
+    url = 'https://cse135proj.site/json/api/activity';
     const rawResponse = await fetch(url, {
       method: 'POST',
       headers: {
