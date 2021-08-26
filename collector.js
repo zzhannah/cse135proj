@@ -29,7 +29,7 @@
  */
 
 
-var ID = 0;
+var ID = '';
 export const data = {
   static: {
     userAgent: null,
@@ -141,7 +141,7 @@ function postStatic() {
       })
     }).then(function(response){
       ID = response._id;
-      console.log(content);
+      console.log(response);
     });
     
 }
