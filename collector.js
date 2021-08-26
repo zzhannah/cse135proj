@@ -291,11 +291,10 @@ setInterval(function postActivity(){
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        'duration': data.performance.duration,
-        'transferSize': data.performance.transferSize,
-        'decodedBodySize': data.performance.decodedBodySize,
-        'domContentLoadedEventStart': data.performance.domContentLoadedEventStart,
-        'domContentLoadedEventEnd': data.performance.domContentLoadedEventEnd
+        'mousePosition': data.activity.mousePosition,
+        'mouseClicks': data.activity.mouseClicks,
+        'keydown': data.activity.keystrokes.keydown,
+        'keyup': data.activity.keystrokes.keyup
       })
     });
     const content = await rawResponse.json();
@@ -314,13 +313,6 @@ function init() {
   collectPerformanceData();
   bindActivityEvents();
 }
-
-        // 'mousePosition': data.activity.mousePosition,
-        // 'mouseClicks': data.activity.mouseClicks,
-        // 'keydown': data.activity.keystrokes.keydown,
-        // 'keyup': data.activity.keystrokes.keyup
-
-
 
 // The initilize function will run once the DOM has been parsed which gives
 // some time for things to load
