@@ -24,7 +24,7 @@
     var duration = [];
     var transferSize = [];
     var decodeBodySize = [];
-    var test = [];
+    var test = [123,456,789];
     const url = 'https://cse135proj.site/api/performance';
     fetch(url).then(response => {
             response.json().then(data => {
@@ -36,7 +36,7 @@
                     duration[i] = element.duration;
                     transferSize[i] = element.transferSize;
                     decodeBodySize[i] = element.decodeBodySize;
-                    test[i] = i;
+                    //test[i] = i;
                     i++;
                   }
                 });
@@ -58,10 +58,10 @@
         label: {
           text: "Here is a category scale"
         },
-        labels: id
+        labels: test
       },
       series: [{
-          values: duration
+          values: test
         }
         
       ]
