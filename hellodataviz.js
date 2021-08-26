@@ -4,6 +4,8 @@
     var trans = [];
     var duration = [];
     var decodedBodySize = []
+    var domContentLoadedEventStart = [];
+    var domContentLoadedEventEnd = [];
     window.addEventListener('DOMContentLoaded', init);
     function init(){
       const url = 'https://cse135proj.site/api/performance';
@@ -15,6 +17,8 @@
                     trans[i] = data[i].transferSize;
                     duration[i] = data[i].duration;
                     decodedBodySize[i] = data[i].decodedBodySize;
+                    domContentLoadedEventEnd[i] = data[i].domContentLoadedEventEnd;
+                    domContentLoadedEventStart[i] = data[i].domContentLoadedEventStart;
                 }
                 ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"];
                 let myConfig1 = {
@@ -44,17 +48,21 @@
                 id: 'myChart1',
                 data: myConfig1,
                 height: "30%",
-                width: "100%"
+                width: "180%"
                 });
 
                 var myConfig2 = {
                     "type": "line",
+                    scaleX: {
+                        label: {
+                        text: "domContentLoadedEventStart and End / id"
+                        },
+                        labels: id
+                    },
                     "series": [{
-                      "values": [20, 40, 25, 50, 15, 45, 33, 34]
+                      "values": domContentLoadedEventEnd
                     }, {
-                      "values": [5, 30, 21, 18, 59, 50, 28, 33]
-                    }, {
-                      "values": [30, 5, 18, 21, 33, 41, 29, 15]
+                      "values": domContentLoadedEventStart
                     }]
                   };
                
@@ -62,7 +70,7 @@
                     id: 'myChart2',
                     data: myConfig2,
                     height: "30%",
-                    width: "100%"
+                    width: "80%"
                   });
             }).catch(error => {
                 console.log(error.message);
