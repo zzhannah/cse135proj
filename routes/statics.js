@@ -2,7 +2,7 @@ const Static = require('../models/static')
 const express = require('express')
 const server = express.Router()
 
-server.get('/static', async(req,res) => {
+server.get('/', async(req,res) => {
     try{
         const static = await Static.find()
         console.log(static)
@@ -11,7 +11,7 @@ server.get('/static', async(req,res) => {
     }
 })
 
-server.get('/static/:id', async(req, res) => { 
+server.get('/:id', async(req, res) => { 
     try{
         const static = await Static.findById(req.params.id)
         console.log(static)
@@ -21,7 +21,7 @@ server.get('/static/:id', async(req, res) => {
 })
 
 
-server.post('/static', async(req,res) => {
+server.post('/', async(req,res) => {
     const static = new Static({
         id : req.body.id,
         userAgent: req.body.userAgent,

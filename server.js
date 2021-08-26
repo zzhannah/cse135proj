@@ -23,9 +23,9 @@ server.use(jsonServer.rewriter({"/api/*": "/$1"}));
 
 
 // Returns an Express router
-var router = jsonServer.router('db.json');
+// var router = jsonServer.router('db.json');
 
-server.use(router);
+// server.use(router);
 const staticRouter = require('./routes/statics')
 server.use('/static', staticRouter)
 
