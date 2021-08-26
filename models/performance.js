@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const performanceSchema = new mongoose.Schema({
 
     id: {
-        type: Number
+        type: String
     },
     duration: {
         type: Number
