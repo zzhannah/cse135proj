@@ -22,9 +22,9 @@
     const url = 'https://cse135proj.site/api/performance';
     fetch(url).then(response => {
             response.json().then(data => {
-                console.log(data);
+                console.log(data[1]);
                 for (let i = 0; i < cars.length; i++) {
-                    text += cars[i] + "<br>";
+                   
                 }
             }).catch(error => {
                 console.log(error.message);
