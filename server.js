@@ -2,22 +2,10 @@
 
 var express = require('express');
 const mongoose = require('mongoose');
-var MongoClient = require('mongodb').MongoClient;
 
 const url = 'mongodb://localhost/data';
-const url2 = 'mongodb://localhost:27017';
 const app = express()
 
-MongoClient.connect(url2, function(err, client) {
-    db = client.db('data');
-  });
-
-app.get('/data', function(req, res) {
-    db.collection('static').find({}).toArray(function(err, docs) {
-      res.send(docs);
-      console.log(res);
-    });
-  })
 // Returns an Express server
 
 
