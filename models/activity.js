@@ -7,16 +7,16 @@ const activitySchema = new mongoose.Schema({
         type: Number
     },
     mousePosition: {
-        type: String
+        type: Array
     },
     mouseClicks: {
-        type: String
+        type: Array
     },
     keydown: {
-        type: String
+        type: Array
     },
     keyup: {
-        type: String 
+        type: Array 
     }
 })
 
