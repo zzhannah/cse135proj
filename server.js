@@ -7,7 +7,7 @@ const url = 'mongodb://localhost/data';
 
 // Returns an Express server
 var server = jsonServer.create();
-const Alien = require('../models/alien')
+
 
 mongoose.connect(url, {useNewUrlParser:true})
 const con = mongoose.connection;
@@ -27,7 +27,7 @@ server.use(jsonServer.rewriter({"/api/*": "/$1"}));
 
 // server.use(router);
 const staticRouter = require('./routes/statics')
-app.use('/static',staticRouter)
+server.use('/static', staticRouter)
 
 // const performanceRouter = require('./routes/performances')
 // app.use('/static',performanceRouter)
