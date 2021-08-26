@@ -15,8 +15,8 @@ window.addEventListener('DOMContentLoaded', init);
 var static;
 var performance;
 function init(){
-    postPerformance;
-    postStatic;
+    postPerformance();
+    postStatic();
 
 }
 function postPerformance(){
