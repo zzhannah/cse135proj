@@ -25,7 +25,7 @@ server.use(jsonServer.defaults());
 // Add custom routes
 
 // Returns an Express router
-// var router = jsonServer.router('db.json');
+var router = jsonServer.router('db.json');
 app.use(router);
 app.use(express.json())
 
