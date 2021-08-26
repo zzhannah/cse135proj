@@ -17,10 +17,10 @@ var performance;
 function init(){
     postPerformance;
     postStatic;
-    // document.getElementById('grid1').data = static;
-    // console.log(static);
-    // document.getElementById('grid1').data = performance;
-    // console.log(performance);
+    document.getElementById('grid1').data = static;
+    console.log(static);
+    document.getElementById('grid1').data = performance;
+    console.log(performance);
 
 }
 function postPerformance(){
@@ -32,7 +32,7 @@ function postPerformance(){
             'Content-Type': 'application/json'
         }
     }).then(function(response){
-        performance = JSON.stringify(response);
+        performance = response;
         console.log(performance);
     });
   }
@@ -45,7 +45,7 @@ function postStatic() {
         'Content-Type': 'application/json'
       }
     }).then(function(response){
-      static = JSON.stringify(response);
+      static = response;
       console.log(static);
     });
       
