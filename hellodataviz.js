@@ -18,7 +18,7 @@
     fetch(url).then(response => {
           response.json().then(data => {
             console.log(data[1].id);
-              id1 = data[1].id;
+              id1 = data[1].id.toString();
               // id2 = data[2].id;
               // id3 = data[2].id;
               // transferSize1 = data[1].transferSize;
