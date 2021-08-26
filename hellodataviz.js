@@ -74,39 +74,39 @@
                 //     width: "80%"
                 //   });
                   
-                  const total = domContentLoadedEventEnd[1]+trans[1]+duration[1]+decodedBodySize[1]+domContentLoadedEventStart[1];
-                  var myConfig3 = {
-                    "type": "ring",
-                    "title": {
-                      "text": "transferSize duration decodedBodySize domContentLoadedEventEnd domContentLoadedEventStart"
-                    },
-                    "plot": {
-                      //Use the "slice" attribute to adjust the size of the donut ring.
-                    },
-                    "series": [{
-                        "values": [10*domContentLoadedEventEnd[1]/total]
-                      },
-                      {
-                        "values": [10*trans[1]/total]
-                      },
-                      {
-                        "values": [10*duration[1]/total]
-                      },
-                      {
-                        "values": [10*decodedBodySize[1]/total]
-                      },
-                      {
-                        "values": [10*domContentLoadedEventStart[1]/total]
-                      }
-                    ]
-                  };
+                //   const total = domContentLoadedEventEnd[1]+trans[1]+duration[1]+decodedBodySize[1]+domContentLoadedEventStart[1];
+                //   var myConfig3 = {
+                //     "type": "ring",
+                //     "title": {
+                //       "text": "transferSize duration decodedBodySize domContentLoadedEventEnd domContentLoadedEventStart"
+                //     },
+                //     "plot": {
+                //       //Use the "slice" attribute to adjust the size of the donut ring.
+                //     },
+                //     "series": [{
+                //         "values": [10*domContentLoadedEventEnd[1]/total]
+                //       },
+                //       {
+                //         "values": [10*trans[1]/total]
+                //       },
+                //       {
+                //         "values": [10*duration[1]/total]
+                //       },
+                //       {
+                //         "values": [10*decodedBodySize[1]/total]
+                //       },
+                //       {
+                //         "values": [10*domContentLoadedEventStart[1]/total]
+                //       }
+                //     ]
+                //   };
                
-                  zingchart.render({
-                    id: 'myChart3',
-                    data: myConfig3,
-                    height: 400,
-                    width: "80%"
-                  });
+                //   zingchart.render({
+                //     id: 'myChart3',
+                //     data: myConfig3,
+                //     height: 400,
+                //     width: "80%"
+                //   });
 
 
             }).catch(error => {
