@@ -34,7 +34,7 @@
                     duration[i] = element.duration;
                     transferSize[i] = element.transferSize;
                     decodeBodySize[i] = element.decodeBodySize;
-                    i++;
+                    if(i<5) i++;
                 });
             }).catch(error => {
                 console.log(error.message);
@@ -53,10 +53,10 @@
         label: {
           text: "Here is a category scale"
         },
-        labels: ["61279bcf56eb123820be6028", "61279c2256eb123820be6051", "61279c8956eb123820be608a", "61279cc756eb123820be60ab", "61279d1456eb123820be60cd" ]
+        labels: id
       },
       series: [{
-          values: [496, 543, 477, 488, 568]
+          values: duration
         }
         
       ]
