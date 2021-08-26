@@ -27,7 +27,7 @@
     const url = 'https://cse135proj.site/api/performance';
     fetch(url).then(response => {
             response.json().then(data => {
-                console.log(data[1]);
+                console.log(data);
 
                 data.forEach(element => {
                     id[i] = element.id;
@@ -39,6 +39,8 @@
                 console.log(error.message);
             })    
     });
+    console.log(id);
+    console.log(duration);
 
     ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"];
     var myConfig = {
