@@ -3,7 +3,7 @@
 var express = require('express');
 const mongoose = require('mongoose');
 
-const url = 'mongodb://143.244.179.141:27017/data';
+const url = 'mongodb://localhost/data';
 
 const app = express()
 // Returns an Express server
