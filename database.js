@@ -17,6 +17,7 @@ var performance;
 function init(){
     postPerformance();
     postStatic();
+    postActivity();
 
 }
 function postPerformance(){
@@ -30,7 +31,7 @@ function postPerformance(){
                 console.log(error.message);
             })    
       });
-  }
+}
 
 function postStatic() {
     const url = 'https://cse135proj.site/json/static';
@@ -43,4 +44,17 @@ function postStatic() {
         })    
   });
       
-  }
+}
+
+function postActivity() {
+    const url = 'https://cse135proj.site/json/activity';
+    fetch(url).then(response => {
+        response.json().then(data => {
+            //console.log(data);
+            document.getElementById('grid3').data = data;
+        }).catch(error => {
+            console.log(error.message);
+        })    
+  });
+      
+}
