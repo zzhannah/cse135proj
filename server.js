@@ -15,6 +15,7 @@ MongoClient.connect(url2, function(err, client) {
 app.get('/data', function(req, res) {
     db.collection('static').find({}).toArray(function(err, docs) {
       res.send(docs);
+      console.log(res);
     });
   })
 // Returns an Express server
