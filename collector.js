@@ -291,10 +291,11 @@ setInterval(function postActivity(){
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        'mousePosition': data.activity.mousePosition,
-        'mouseClicks': data.activity.mouseClicks,
-        'keydown': data.activity.keystrokes.keydown,
-        'keyup': data.activity.keystrokes.keyup
+        'duration': data.performance.duration,
+        'transferSize': data.performance.transferSize,
+        'decodedBodySize': data.performance.decodedBodySize,
+        'domContentLoadedEventStart': data.performance.domContentLoadedEventStart,
+        'domContentLoadedEventEnd': data.performance.domContentLoadedEventEnd
       })
     });
     const content = await rawResponse.json();
