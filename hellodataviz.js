@@ -52,27 +52,27 @@
                 });
 
 
-                // var myConfig2 = {
-                //     "type": "line",
-                //     "scaleX": {
-                //         "label": {
-                //         "text": "domContentLoadedEventStart and End / id"
-                //         },
-                //         "labels": id
-                //     },
-                //     "series": [{
-                //       "values": domContentLoadedEventEnd
-                //     }, {
-                //       "values": domContentLoadedEventStart
-                //     }]
-                //   };
+                var myConfig2 = {
+                    "type": "line",
+                    "scaleX": {
+                        "label": {
+                        "text": "domContentLoadedEventStart and End / id"
+                        },
+                        "labels": id
+                    },
+                    "series": [{
+                      "values": domContentLoadedEventEnd
+                    }, {
+                      "values": domContentLoadedEventStart
+                    }]
+                  };
                
-                //   zingchart.render({
-                //     id: 'myChart2',
-                //     data: myConfig2,
-                //     height: "30%",
-                //     width: "80%"
-                //   });
+                  zingchart.render({
+                    id: 'myChart2',
+                    data: myConfig2,
+                    height: "30%",
+                    width: "80%"
+                  });
                   
                 //   const total = domContentLoadedEventEnd[1]+trans[1]+duration[1]+decodedBodySize[1]+domContentLoadedEventStart[1];
                 //   var myConfig3 = {
