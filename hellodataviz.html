@@ -21,23 +21,23 @@
   <script>      
   // I can't get data.element into an array, once I put them into an array
   // the array becomes an object, so i have to use a silly solution here.
-    var id1;
-    var id2;
-    var id3;
-    var transferSize1;
-    var transferSize2;
-    var transferSize3;
-    var duration1;
-    var duration2;
-    var duration3;
-    var decodeBodySize1;
-    var decodeBodySize2;
-    var decodeBodySize3;
+    let id1;
+    let id2;
+    let id3;
+    let transferSize1;
+    let transferSize2;
+    let transferSize3;
+    let duration1;
+    let duration2;
+    let duration3;
+    let decodeBodySize1;
+    let decodeBodySize2;
+    let decodeBodySize3;
     const url = 'https://cse135proj.site/api/performance';
     fetch(url).then(response => {
             response.json().then(data => {
               console.log(data);
-                id1 = data[1].id;
+                id1 = data[1].id.values;
                 id2 = data[2].id;
                 id3 = data[2].id;
                 transferSize1 = data[1].transferSize;
@@ -55,7 +55,7 @@
     });
     console.log(id1);
     ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"];
-    var myConfig = {
+    let myConfig = {
       type: "bar",
       plotarea: {
         adjustLayout: true
