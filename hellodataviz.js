@@ -20,6 +20,8 @@
               console.log(data[1].id);
                 id1 = data[1].id;
                 console.log('dd', id1);
+                id2 = id1;
+                console.log('cc', id2);
                 // id2 = data[2].id;
                 // id3 = data[2].id;
                 // transferSize1 = data[1].transferSize;
@@ -36,6 +38,8 @@
             })    
         });
         console.log(id1);
+        console.log(id2);
+
         draw();
     };
     
