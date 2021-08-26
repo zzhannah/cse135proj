@@ -18,8 +18,7 @@
  
 <body>
   <div id='myChart'></div>
-  <script>    
- 
+  <script>      
     var i = 0;
     var id = [];
     var duration = [];
@@ -30,11 +29,11 @@
     fetch(url).then(response => {
             response.json().then(data => {
                 console.log(data);
-                id = _.pluck(data,"id");
-                duration = _.pluck(data, "duration");
-                transferSize = _.pluck(data,"transferSize");
-                decodeBodySize = _.pluck(data, "decodeBodySize");
-                test = _.pluck(data, "test");
+                id = data.map(a => a.id);
+                duration = data.map(a => a.duration);
+                transferSize = data.map(a => a.transferSize);
+                decodeBodySize = data.map(a => a.decodeBodySize);
+                test = data.map(a => a.test);
             }).catch(error => {
                 console.log(error.message);
             })    
