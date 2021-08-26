@@ -3,7 +3,7 @@
     var id = [];
     var trans = [];
     var duration = [];
-    var decodeBodySize = []
+    var decodedBodySize = []
     window.addEventListener('DOMContentLoaded', init);
     function init(){
       const url = 'https://cse135proj.site/api/performance';
@@ -14,8 +14,7 @@
                     id[i] = data[i].id;
                     trans[i] = data[i].transferSize;
                     duration[i] = data[i].duration;
-                    decodeBodySize[i] = data[i].decodeBodySize;
-                    console.log(data[i].decodeBodySize);
+                    decodedBodySize[i] = data[i].decodedBodySize;
                 }
                 ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"];
                 let myConfig = {
@@ -36,7 +35,7 @@
                     values: duration
                   },
                   {
-                    values: decodeBodySize
+                    values: decodedBodySize
                   }
                 ]
               };
