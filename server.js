@@ -22,7 +22,7 @@ server.get('/static/:id', function (req, res) {
 server.use(jsonServer.rewriter({"/api/*": "/$1"}));
 
 // Returns an Express router
-var router = jsonServer.router('db.json');
+//var router = jsonServer.router('db.json');
 
 server.use(router);
 
