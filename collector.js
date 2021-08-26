@@ -124,10 +124,10 @@ function collectStaticData() {
 
 function postStatic() {
   console.log('1connected...')
-  (async () => {
+
     const url = 'https://cse135proj.site/json/api/static';
     console.log('c2onnected...')
-    const rawResponse = await fetch(url, {
+    fetch(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -139,12 +139,12 @@ function postStatic() {
         'innerWidth': window.innerWidth,
         'innerHeight': window.innerHeight
       })
-    });
-    console.log('con3nected...')
-    const content = await rawResponse.json();
+    }).then(function(response){
+      const content = await response.json();
     ID = content._id;
     console.log(content);
-  })();
+    });
+    
 }
 
 

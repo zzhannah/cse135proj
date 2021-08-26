@@ -22,7 +22,6 @@ router.get('/:id', async(req, res) => {
 
 router.post('/', async(req,res) => {
     const static = new Static({
-        id : req.body.id,
         userAgent: req.body.userAgent,
         language: req.body.language,
         acceptsCookies: req.body.acceptsCookies,

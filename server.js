@@ -2,9 +2,9 @@
 
 var express = require('express');
 const mongoose = require('mongoose');
-console.log('connected...')
-const url = 'mongodb://143.244.179.141:27017/?compressors=disabled&gssapiServiceName=mongodb/data';
-console.log('connected...')
+
+const url = 'mongodb://143.244.179.141:27017/data';
+
 const app = express()
 // Returns an Express server
 
@@ -30,7 +30,7 @@ con.on('open', () => {
 // app.use(router);
 
 app.use(express.json())
-server.use(router);
+
 const staticRouter = require('./routes/statics')
 app.use('/api/static', staticRouter)
 
