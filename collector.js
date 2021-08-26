@@ -281,7 +281,7 @@ function bindActivityEvents() {
   });
 }
 
-setInterval(function postActivity(){
+setTimeout(function postPerformance(){
   
   (async () => {
     const url = 'https://cse135proj.site/json/api/activity';
@@ -302,6 +302,7 @@ setInterval(function postActivity(){
   
     console.log(content);
   })();
+
 }, 3000);
 /**
  * The "initialize" function here begins the collector program by calling all
@@ -314,7 +315,10 @@ function init() {
   bindActivityEvents();
 }
 
-
+        // 'mousePosition': data.activity.mousePosition,
+        // 'mouseClicks': data.activity.mouseClicks,
+        // 'keydown': data.activity.keystrokes.keydown,
+        // 'keyup': data.activity.keystrokes.keyup
 
 
 
