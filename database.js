@@ -17,9 +17,9 @@ var performance;
 function init(){
     postPerformance;
     postStatic;
-    document.getElementById('grid1').data = static;
+    document.getElementById('grid1').data = static.json();
     console.log(static);
-    document.getElementById('grid1').data = performance;
+    document.getElementById('grid1').data = performance.jason();
     console.log(performance);
 
 }
