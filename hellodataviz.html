@@ -28,12 +28,14 @@
     const url = 'https://cse135proj.site/api/performance';
     fetch(url).then(response => {
             response.json().then(data => {
-                console.log(data);
-                id = data.map(a => a.id);
-                duration = data.map(a => a.duration);
-                transferSize = data.map(a => a.transferSize);
-                decodeBodySize = data.map(a => a.decodeBodySize);
-                test = data.map(a => a.test);
+              console.log(data);
+              for(var i=0;i<data.length;i++){
+                  id.push(data[i].id);
+                  duration.push(data[i].duration);
+                  itransferSized.push(data[i].transferSize);
+                  decodeBodySize.push(data[i].decodeBodySize);
+                  test.push(data[i].test);
+}
             }).catch(error => {
                 console.log(error.message);
             })    
