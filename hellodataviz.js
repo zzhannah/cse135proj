@@ -83,19 +83,19 @@
                       //Use the "slice" attribute to adjust the size of the donut ring.
                     },
                     "series": [{
-                        "values": 10*domContentLoadedEventEnd[1]/total
+                        "values": [10*domContentLoadedEventEnd[1]/total]
                       },
                       {
-                        "values": 10*trans[1]/total
+                        "values": [10*trans[1]/total]
                       },
                       {
-                        "values": 10*duration[1]/total
+                        "values": [10*duration[1]/total]
                       },
                       {
-                        "values": 10*decodedBodySize[1]/total
+                        "values": [10*decodedBodySize[1]/total]
                       },
                       {
-                        "values": 10*domContentLoadedEventStart[1]/total
+                        "values": [10*domContentLoadedEventStart[1]/total]
                       }
                     ]
                   };
