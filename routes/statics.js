@@ -21,6 +21,7 @@ router.get('/:id', async(req, res) => {
 })
 
 router.post('/', async(req,res) => {
+    console.log("id = ", req.body._id)
     const static = new Static({
         id:req.body._id,
         userAgent: req.body.userAgent,
@@ -29,6 +30,7 @@ router.post('/', async(req,res) => {
         innerWidth : req.body.innerWidth,
         innerHeight : req.body.innerHeight
     })
+ 
 
     try{
         const a1 =  await static.save() 
