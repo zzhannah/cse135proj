@@ -29,7 +29,7 @@
  */
 
 
-var ID = '';
+var ID = 0;
 export const data = {
   static: {
     userAgent: null,
