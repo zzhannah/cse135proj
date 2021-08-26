@@ -17,10 +17,6 @@ var performance;
 function init(){
     postPerformance;
     postStatic;
-    document.getElementById('grid1').data = static;
-    console.log(static);
-    document.getElementById('grid1').data = performance;
-    console.log(performance);
 
 }
 function postPerformance(){
@@ -32,8 +28,7 @@ function postPerformance(){
             'Content-Type': 'application/json'
         }
     }).then(function(response){
-        performance = response;
-        console.log(performance);
+        document.getElementById('grid2').data = performance;
     });
   }
 
@@ -45,8 +40,7 @@ function postStatic() {
         'Content-Type': 'application/json'
       }
     }).then(function(response){
-      static = response;
-      console.log(static);
+        document.getElementById('grid1').data = static;
     });
       
   }
