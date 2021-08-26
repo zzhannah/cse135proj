@@ -289,9 +289,9 @@ function postPerformance(){
       'domContentLoadedEventStart': data.performance.domContentLoadedEventStart,
       'domContentLoadedEventEnd': data.performance.domContentLoadedEventEnd
     })
-  }).then(function(response){
-    const content = response;
-    console.log(content);
+  }).then(response=>response.json())
+  .then(data=>{
+    console.log(data);
   });
 }
 
@@ -310,9 +310,9 @@ setInterval(function postActivity(){
       'keydown': data.activity.keystrokes.keydown,
       'keyup': data.activity.keystrokes.keyup
     })
-  }).then(function(response){
-    const content = response;
-    console.log(content);
+  }).then(response=>response.json())
+  .then(data=>{
+    console.log(data);
   });
 
 }, 5000);
