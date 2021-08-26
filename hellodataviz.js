@@ -65,12 +65,12 @@
           })    
       });
       console.log(id1);
-      draw();
-  };
+    //   draw();
+  });
   
   
-  function draw(){
+//   function draw(){
     
 
-  });
-  };
+//   });
+//   };
