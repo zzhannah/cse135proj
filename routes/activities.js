@@ -37,6 +37,17 @@ router.post('/', async(req,res) => {
     }
 })
 
+router.put('/:id',async(req,res)=> {
+    try{
+        const activity = await Activity.findById(req.params.id) 
+        activity.mousePosition = req.body.mousePosition;
+        const a1 = await activity.save()
+        res.json(a1)   
+    }catch(err){
+        res.send('Error')
+    }
+})
+
 router.delete('/:id',async(req,res)=> {
     try{
         const activity = await Activity.findById(req.params.id) 

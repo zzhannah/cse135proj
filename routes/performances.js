@@ -38,6 +38,17 @@ router.post('/', async(req,res) => {
     }
 })
 
+router.put('/:id',async(req,res)=> {
+    try{
+        const performance = await Performance.findById(req.params.id)
+        performance.duration = req.body.duration; 
+        const a1 = await performance.save()
+        res.json(a1)   
+    }catch(err){
+        res.send('Error')
+    }
+})
+
 router.delete('/:id',async(req,res)=> {
     try{
         const performance = await Performance.findById(req.params.id) 
