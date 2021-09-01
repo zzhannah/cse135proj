@@ -1,0 +1,42 @@
+<!-- include header -->
+<%- include('include/_header') %>
+<!-- /include header -->
+
+  <!-- Main Site -->
+  <main id="site-main">
+    <div class="container">
+        <div class="form-title text-center">
+            <h2 class="text-dark">Register</h2>
+            <span class="text-light">Use the below form to register</span>
+        </div>
+        <form action="/register" method="POST" class="login">
+          <div class="new_user">
+              <div class="form-group">
+                  <label for="name" class="text-light">Name</label>
+                  <input type="text" id="name" name="name" value="" autocomplete="off" required>
+              </div>
+              <div class="form-group">
+                  <label for="email" class="text-light">Email</label>
+                  <input type="email" id="email" name="email" value="" autocomplete="off" required>
+              </div>
+              <div class="form-group">
+                  <label for="Password" class="text-light">Password</label>
+                  <input type="password" id="password" name="password" value="" autocomplete="off" required>
+              </div>
+              <div>
+                <input type="hidden" id="role" name="role" value="basic">
+              </div>
+
+              <div class="form-group">
+                  <button type="submit" class="btn text-dark update" style="color: white;">Register</button>
+              </div>
+          </div>
+        </form>
+        <a href="/login" ><i class="fas fa-angle-double-left" ></i>Back to Login Page</a>
+    </div>
+</main>
+<!-- /Main Site -->
+
+<!-- include footer -->
+<%- include('include/_footer') %>
+<!-- /include footer -->

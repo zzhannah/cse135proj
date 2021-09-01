@@ -1,46 +1,116 @@
 // app.js file
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
 
-const { MongoClient } = require('mongodb');
-const uri1 = "mongodb+srv://root:<password>@cluster0.ctfa5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-const client = new MongoClient(uri1, { useNewUrlParser: true, useUnifiedTopology: true });
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  client.close();
-});
-
-
+//................................................................//
+const dotenv = require('dotenv');
+const morgan = require('morgan');
+const bodyparser = require("body-parser");
 var express = require('express');
 const mongoose = require('mongoose');
+const initializePassport = require('./passport-config')
+const passport = require('passport')
+const flash = require('express-flash')
+const session = require('express-session')
+const methodOverride = require('method-override')
+const bcrypt = require('bcrypt');
+const { ROLE, users } = require('./data')
+const { authRole } = require('./basicAuth')
+const path = require('path');
+initializePassport(
+  passport,
+  email => users.find(user => user.email === email),
+  id => users.find(user => user.id === id),
+  name => users.find(user => user.name === name)
+)
+const app = express();
+//app.use(express.json());
 
+//mongoose connection
 const url = 'mongodb+srv://root:hoT.9708t@cluster0.ctfa5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
-const app = express()
-
-// Returns an Express server
-
-
 mongoose.connect(url, {useNewUrlParser:true})
 const con = mongoose.connection;
-
 con.on('open', () => {
     console.log('connected...')
 })
-// app.get('/api/*', (req, res, next) => {
-//     req.url = '/';
-//     next();
-//   });
-// Set default middlewares (logger, static, cors and no-cache)
-//app.use(jsonServer.defaults());
+
+//authentication
+
+app.set('view engine', 'ejs');
+app.use(express.urlencoded({ extended: false }))
+app.use(flash())
+app.use(session({
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false
+}))
+app.use(passport.initialize())
+app.use(passport.session())
+app.use(methodOverride('_method'))
 
 
-// Add custom routes
+app.get('/', checkAuthenticated ,(req, res)=>{
+  res.render('index1.ejs', {name: JSON.stringify(req.user)});
+});
 
-// Returns an Express router
-// var router = jsonServer.router('db.json');
-// app.use(router);
 
-app.use(express.json())
+const login = require('./routes/login')
+app.use('/login', checkNotAuthenticated, login)
 
+
+const register = require('./routes/register')
+app.use('/register', checkNotAuthenticated, register)
+
+app.delete('/logout', (req, res) => {
+  req.logOut()
+  req.flash('success_msg', 'You are logged out');
+  res.redirect('/login')
+})
+
+
+function checkAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next()
+  }
+  res.redirect('/login')
+}
+
+function checkNotAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) {
+    return res.redirect('/')
+  }
+  next()
+}
+
+
+
+
+
+
+
+
+//CRUD
+app.use(morgan('tiny'));
+app.use(bodyparser.urlencoded({ extended : true}))
+app.use('/css', express.static(path.resolve(__dirname, "assets/css")))
+//app.use('/img', express.static(path.resolve(__dirname, "assets/img")))
+app.use('/js', express.static(path.resolve(__dirname, "assets/js")))
+
+app.use('/admin', checkAuthenticated, authRole('admin'), require('./routes/routers'))
+
+
+
+
+const controller = require('./controller/controller');
+
+app.post('/api/users', controller.create);
+app.get('/api/users', controller.find);
+app.put('/api/users/:id', controller.update);
+app.delete('/api/users/:id', controller.delete);
+
+
+//DATABASE
 const staticRouter = require('./routes/statics')
 app.use('/static', staticRouter)
 
