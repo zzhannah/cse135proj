@@ -270,7 +270,7 @@ function postStatic() {
   }).then(response=>response.json())
     .then(data=>{
       ID = data._id.toString();
-      console.log(data);
+      console.log("static", data);
   });
     
 }
@@ -317,7 +317,7 @@ setInterval(function postActivity(){
     console.log(data);
   });
 
-}, 5000);
+}, 50000);
 // The initilize function will run once the DOM has been parsed which gives
 // some time for things to load
 window.addEventListener('DOMContentLoaded', init);
