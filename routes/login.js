@@ -2,6 +2,7 @@ const User = require('../models/model')
 const express = require('express')
 const router = express.Router()
 const passport = require('passport')
+require('./passport-config')(passport);
 
 
 router.get('/', async(req,res) => {
