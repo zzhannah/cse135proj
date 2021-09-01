@@ -14,7 +14,7 @@ $("#update_user").submit(function(event){
 
 
     var request = {
-        "url" : `https://cse135proj.site/api/users/${data.id}`,
+        "url" : `https://cse135proj.site/api/api/users/${data.id}`,
         "method" : "PUT",
         "data" : data
     }
@@ -32,7 +32,7 @@ if(window.location.pathname == "/api/admin"){
         var id = $(this).attr("data-id")
 
         var request = {
-            "url" : `https://cse135proj.site/api/users/${id}`,
+            "url" : `https://cse135proj.site/api/api/users/${id}`,
             "method" : "DELETE"
         }
 
