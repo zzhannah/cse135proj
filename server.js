@@ -11,6 +11,7 @@ var express = require('express');
 const mongoose = require('mongoose');
 const passport = require('passport')
 const flash = require('express-flash')
+require('passport-config.js')(passport);
 const session = require('express-session')
 const methodOverride = require('method-override')
 const { authRole } = require('./basicAuth')
