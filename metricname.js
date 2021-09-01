@@ -6,7 +6,7 @@
       fetch(url).then(response => {
             response.json().then(data => {
               console.log(data); 
-              document.getElementById('grid2').data = data.duration;
+              
                 for(i = 0; i < 20; i++){
                     duration[i] = data[i].duration;
                 }
@@ -35,6 +35,7 @@
                 width: "80%"
                 });
 
+                document.getElementById('grid2').data = data;
             }).catch(error => {
                 console.log(error.message);
             })    
