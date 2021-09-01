@@ -3,10 +3,11 @@
  
 <head>
   <meta charset="utf-8">
-  <title>ZingSoft Demo</title>
+  <title>Detail Report</title>
  
   <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
-  <script src="hellodataviz.js"></script>
+  <script src="https://cdn.zinggrid.com/zinggrid.min.js" defer></script>
+  <script src="metricname.js"></script>
   <style>
     html,
     body
@@ -24,8 +25,15 @@
 <body>
 
   <div id='myChart1'></div>
-
-
+  <zing-grid id="grid1" caption="Static" sort search pager page-size="15" page-size-options="2,3,6" layout="row" viewport-stop data=''>
+  </zing-grid>
+  <script>
+    // window:load event for Javascript to run after HTML
+    // because this Javascript is injected into the document head
+    window.addEventListener('load', () => {
+      // content after DOM load
+    });
+  </script>
 </body>
  
 </html>
