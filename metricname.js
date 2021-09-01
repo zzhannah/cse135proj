@@ -35,7 +35,7 @@
                 width: "80%"
                 });
 
-                document.getElementById('grid2').data = data;
+                document.getElementById('grid1').data = data;
             }).catch(error => {
                 console.log(error.message);
             })    
