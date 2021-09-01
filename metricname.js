@@ -1,5 +1,6 @@
 
     var duration = [];
+    var transfer = []
     window.addEventListener('DOMContentLoaded', init);
     function init(){
       const url = 'https://cse135proj.site/api/performance';
@@ -9,6 +10,7 @@
               
                 for(i = 0; i < 20; i++){
                     duration[i] = data[i].duration;
+                    transfer[i] = data[i].transferSize;
                 }
                 ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"];
                 let myConfig1 = {
@@ -18,12 +20,15 @@
                 },
                 scaleX: {
                     label: {
-                    text: "duration time"
+                    text: "relationship between duration and transferSize"
                     }
                     // labels: id
                 },
                 series: [{
                     values: duration
+                  },
+                  {
+                      values: transfer
                   }
                 ]
               };
@@ -35,7 +40,16 @@
                 width: "80%"
                 });
 
-                document.getElementById('grid1').data = duration;
+                
+                var table = document.getElementById("table");
+                for(i = 0; i<duration.length;i++){
+                    var row = table.insertRow(-1);
+                    var cell1 = row.insertCell(0);
+                    var cell2 = row.insertCell(1);
+                    cell1.innerHTML = duration[i];
+                    cell2.innerHTML = transferSize[i];
+                }
+
             }).catch(error => {
                 console.log(error.message);
             })    
