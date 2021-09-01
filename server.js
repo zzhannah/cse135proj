@@ -41,17 +41,17 @@ app.use(passport.session())
 app.use(methodOverride('_method'))
 
 
-app.get('/api', checkAuthenticated ,(req, res)=>{
+app.get('/', checkAuthenticated ,(req, res)=>{
   res.render('index1.ejs', {name: JSON.stringify(req.user)});
 });
 
 
 const login = require('./routes/login')
-app.use('/api/login', checkNotAuthenticated, login)
+app.use('/login', checkNotAuthenticated, login)
 
 
 const register = require('./routes/register')
-app.use('/api/register', checkNotAuthenticated, register)
+app.use('/register', checkNotAuthenticated, register)
 
 app.delete('/logout', (req, res) => {
   req.logOut()
@@ -64,7 +64,7 @@ function checkAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
     return next()
   }
-  res.redirect('/api/login')
+  res.redirect('/login')
 }
 
 function checkNotAuthenticated(req, res, next) {
