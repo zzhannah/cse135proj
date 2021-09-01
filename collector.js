@@ -27,6 +27,9 @@
  * let you know that those objects have been set and are ready to be sent.
  * Activity doesn't have one since it's continuous
  */
+
+
+var ID = '';
 export const data = {
   static: {
     userAgent: null,
@@ -119,6 +122,8 @@ function collectStaticData() {
   data.static.ready = true;
 }
 
+
+
 /**
  * Collects all of the performance data outlined in the data object above
  */
@@ -147,6 +152,8 @@ function collectPerformanceData() {
     data.performance.ready = true;
   }
 }
+
+
 
 /**
  * Binds all of the event listeners for mouse clicks and keystrokes
@@ -242,9 +249,80 @@ function init() {
   collectStaticData();
   collectPerformanceData();
   bindActivityEvents();
+
 }
 
+function postStatic() {
+
+  const url = 'https://cse135proj.site/api/static';
+  fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      'userAgent': data.static.userAgent,
+      'language': data.static.language,
+      'acceptsCookies': data.static.acceptsCookies,
+      'innerWidth': window.innerWidth,
+      'innerHeight': window.innerHeight
+    })
+  }).then(response=>response.json())
+    .then(data=>{
+      ID = data._id.toString();
+      console.log(data);
+  });
+    
+}
+
+function postPerformance(){
+
+  const url = 'https://cse135proj.site/api/performance';
+  fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      'id': ID,
+      'duration': data.performance.duration,
+      'transferSize': data.performance.transferSize,
+      'decodedBodySize': data.performance.decodedBodySize,
+      'domContentLoadedEventStart': data.performance.domContentLoadedEventStart,
+      'domContentLoadedEventEnd': data.performance.domContentLoadedEventEnd
+    })
+  }).then(response=>response.json())
+  .then(data=>{
+    console.log(data);
+  });
+}
+
+setInterval(function postActivity(){
+  
+  const url = 'https://cse135proj.site/api/activity';
+  fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      'id': ID,
+      'mousePosition': data.activity.mousePosition.clientX,
+      'mouseClicks': data.activity.mouseClicks,
+      'keydown': data.activity.keystrokes.keydown,
+      'keyup': data.activity.keystrokes.keyup
+    })
+  }).then(response=>response.json())
+  .then(data=>{
+    console.log(data);
+  });
+
+}, 5000);
 // The initilize function will run once the DOM has been parsed which gives
 // some time for things to load
 window.addEventListener('DOMContentLoaded', init);
+window.addEventListener('load', postStatic);
+//window.addEventListener('load', postActivity);
+window.addEventListener('unload', postPerformance);
+
 
