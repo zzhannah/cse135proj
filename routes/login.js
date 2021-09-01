@@ -1,7 +1,6 @@
 const User = require('../models/model')
 const express = require('express')
 const router = express.Router()
-const initializePassport = require('../passport-config')
 const passport = require('passport')
 router.use(passport.initialize())
 router.use(passport.session())
