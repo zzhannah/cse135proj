@@ -57,11 +57,11 @@ app.get('/', checkAuthenticated ,(req, res)=>{
 
 
 const login = require('./routes/login')
-app.use('/api/login', checkNotAuthenticated, login)
+app.use('/login', checkNotAuthenticated, login)
 
 
 const register = require('./routes/register')
-app.use('/api/register', checkNotAuthenticated, register)
+app.use('/register', checkNotAuthenticated, register)
 
 app.delete('/logout', (req, res) => {
   req.logOut()
