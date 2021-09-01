@@ -47,7 +47,7 @@
                     var cell1 = row.insertCell(0);
                     var cell2 = row.insertCell(1);
                     cell1.innerHTML = duration[i];
-                    cell2.innerHTML = transferSize[i];
+                    cell2.innerHTML = transfer[i];
                 }
 
             }).catch(error => {
