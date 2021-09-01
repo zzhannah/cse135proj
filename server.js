@@ -50,22 +50,22 @@ app.use(passport.session())
 app.use(methodOverride('_method'))
 
 
-app.get('/', checkAuthenticated ,(req, res)=>{
+app.get('/api', checkAuthenticated ,(req, res)=>{
   res.render('index1.ejs', {name: JSON.stringify(req.user)});
 });
 
 
 const login = require('./routes/login')
-app.use('/login', checkNotAuthenticated, login)
+app.use('/api/login', checkNotAuthenticated, login)
 
 
 const register = require('./routes/register')
-app.use('/register', checkNotAuthenticated, register)
+app.use('/api/register', checkNotAuthenticated, register)
 
 app.delete('/logout', (req, res) => {
   req.logOut()
   req.flash('success_msg', 'You are logged out');
-  res.redirect('/login')
+  res.redirect('/api/login')
 })
 
 
