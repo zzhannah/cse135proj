@@ -25,15 +25,15 @@ require('./passport-config')(passport);
 //   id => users.find(user => user.id === id),
 //   name => users.find(user => user.name === name)
 // )
-const app = express();
-const cors=require("cors");
-const corsOptions ={
-   origin:'*', 
-   credentials:true,            //access-control-allow-credentials:true
-   optionSuccessStatus:200,
-}
+// const app = express();
+// const cors=require("cors");
+// const corsOptions ={
+//    origin:'*', 
+//    credentials:true,            //access-control-allow-credentials:true
+//    optionSuccessStatus:200,
+// }
 
-app.use(cors(corsOptions)) // Use this after the variable declaration
+// app.use(cors(corsOptions)) // Use this after the variable declaration
 //app.use(express.json());
 
 //mongoose connection

@@ -270,7 +270,7 @@ function postStatic() {
   }).then(response=>response.json())
     .then(data=>{
       ID = data._id.toString();
-      console.log("static", data);
+      console.log(data);
   });
     
 }
