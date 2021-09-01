@@ -14,7 +14,7 @@ $("#update_user").submit(function(event){
 
 
     var request = {
-        "url" : `http://localhost:3000/api/users/${data.id}`,
+        "url" : `https://cse135proj.site/api/users/${data.id}`,
         "method" : "PUT",
         "data" : data
     }
@@ -26,13 +26,13 @@ $("#update_user").submit(function(event){
 })
 
 
-if(window.location.pathname == "/admin"){
+if(window.location.pathname == "/api/admin"){
     $ondelete = $(".table tbody td a.delete");
     $ondelete.click(function(){
         var id = $(this).attr("data-id")
 
         var request = {
-            "url" : `http://localhost:3000/api/users/${id}`,
+            "url" : `https://cse135proj.site/api/users/${id}`,
             "method" : "DELETE"
         }
 
