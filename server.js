@@ -25,7 +25,7 @@ require('./passport-config')(passport);
 //   id => users.find(user => user.id === id),
 //   name => users.find(user => user.name === name)
 // )
-// const app = express();
+const app = express();
 // const cors=require("cors");
 // const corsOptions ={
 //    origin:'*', 
@@ -34,7 +34,7 @@ require('./passport-config')(passport);
 // }
 
 // app.use(cors(corsOptions)) // Use this after the variable declaration
-//app.use(express.json());
+app.use(express.json());
 
 //mongoose connection
 const url = 'mongodb+srv://root:hoT.9708t@cluster0.ctfa5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
