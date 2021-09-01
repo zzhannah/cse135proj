@@ -17,9 +17,9 @@ router.post('/', async(req,res) => {
  
     try{
         const a1 =  await user.save() 
-        res.redirect('/login')
+        res.redirect('/api/login')
     }catch(err){
-        res.redirect('/register')
+        res.redirect('/api/register')
     }
 })
 module.exports = router
