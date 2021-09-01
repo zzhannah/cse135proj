@@ -9,13 +9,22 @@ const morgan = require('morgan');
 const bodyparser = require("body-parser");
 var express = require('express');
 const mongoose = require('mongoose');
+// const initializePassport = require('./passport-config.js')
 const passport = require('passport')
 const flash = require('express-flash')
-require('./passport-config')(passport);
 const session = require('express-session')
 const methodOverride = require('method-override')
+//const bcrypt = require('bcrypt');
+// const { ROLE, users } = require('./data')
 const { authRole } = require('./basicAuth')
 const path = require('path');
+require('./passport-config')(passport);
+// initializePassport(
+//   passport,
+//   email => users.find(user => user.email === email),
+//   id => users.find(user => user.id === id),
+//   name => users.find(user => user.name === name)
+// )
 const app = express();
 //app.use(express.json());
 
@@ -56,8 +65,7 @@ app.use('/register', checkNotAuthenticated, register)
 
 app.delete('/logout', (req, res) => {
   req.logOut()
-  req.flash('success_msg', 'You are logged out');
-  res.redirect('/api/login')
+  res.redirect('/login')
 })
 
 
@@ -65,12 +73,12 @@ function checkAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
     return next()
   }
-  res.redirect('/api/login')
+  res.redirect('/login')
 }
 
 function checkNotAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
-    return res.redirect('/api')
+    return res.redirect('/')
   }
   next()
 }
