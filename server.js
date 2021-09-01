@@ -9,20 +9,12 @@ const morgan = require('morgan');
 const bodyparser = require("body-parser");
 var express = require('express');
 const mongoose = require('mongoose');
-const initializePassport = require('./passport-config')
 const passport = require('passport')
 const flash = require('express-flash')
 const session = require('express-session')
 const methodOverride = require('method-override')
-const { ROLE, users } = require('./data')
 const { authRole } = require('./basicAuth')
 const path = require('path');
-initializePassport(
-  passport,
-  email => users.find(user => user.email === email),
-  id => users.find(user => user.id === id),
-  name => users.find(user => user.name === name)
-)
 const app = express();
 //app.use(express.json());
 

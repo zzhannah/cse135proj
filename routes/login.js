@@ -2,8 +2,7 @@ const User = require('../models/model')
 const express = require('express')
 const router = express.Router()
 const passport = require('passport')
-router.use(passport.initialize())
-router.use(passport.session())
+
 
 router.get('/', async(req,res) => {
     res.render('login.ejs')
