@@ -60,7 +60,7 @@ app.use(methodOverride('_method'))
 
 
 app.get('/', checkAuthenticated ,(req, res)=>{
-  res.redirect('/login')
+  res.redirect('/api')
 });
 
 
