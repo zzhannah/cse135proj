@@ -60,7 +60,7 @@ app.use(methodOverride('_method'))
 
 
 app.get('/', checkAuthenticated ,(req, res)=>{
-  res.render('login.ejs')
+  res.redirect('http://reporting.cse135proj.site/')
 });
 
 
