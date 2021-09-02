@@ -60,7 +60,7 @@ app.use(methodOverride('_method'))
 
 
 app.get('/', checkAuthenticated ,(req, res)=>{
-  res.render('index1.ejs', {name: JSON.stringify(req.user)});
+  res.redirect('/api/login')
 });
 
 
